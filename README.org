@@ -1,0 +1,43 @@
+* Introducción
+
+GitHub es la plataforma de alojamiento de código más importante a nivel mundial. Emplea el sistema de control de versiones =git=, y ofrece una amplia variedad de funcionalidades para el alojamiento y revisión del código, el trabajo colaborativo, y la publicación de páginas web asociadas al repositorio de código.
+
+Esta propuesta formativa permite adquirir la destreza suficiente en el manejo de GitHub para la creación y mantenimiento de repositorios de código, para uso individual y trabajo en equipo, tanto en un contexto docente como en un contexto de investigación y desarrollo. Se empleará la aplicación de escritorio (https://desktop.github.com/) y la web de GitHub.
+
+* Objetivos
+ 
+- Comprender los principales conceptos del control de versiones según la implementación de =git=.
+ 
+- Conocer las principales funcionalidades ofrecidas por GitHub.
+ 
+- Crear y mantener repositorios de código en GitHub, tanto para uso individual como para equipos.
+ 
+- Publicar y mantener páginas web en GitHub.
+ 
+* Metodología
+
+Esta propuesta formativa está construida sobre dos recursos:
+diapositivas, y repositorios de ejemplo. 
+
+El material está construido de forma que los asistentes podrán
+ejecutar paso a paso lo expuesto en las diapositivas. Según se avance
+en el contenido, se dedicarán tiempos de trabajo para que los
+asistentes puedan ponerlo en práctica.
+
+* Estructura
+ 
+- ¿Qué es el control de versiones? ¿Qué es =git=? ¿Qué es GitHub?
+- Primeros pasos:
+  - Creación de una cuenta en GitHub.
+  - Configuración del ordenador para el uso de la cuenta.
+  - Mi primer repositorio: crear y clonar.
+- Flujo de trabajo con =git= y =GitHub=
+  - Realizar y confirmar cambios (=add= y =commit=).
+  - Publicar cambios (=push=).
+  - Recibir cambios de un repositorio remoto y combinar con una copia local (=fetch=, =merge= y =pull=)
+- Trabajo en colaboración
+  - Ramas (=branch=).
+  - Combinación de código (=pull request= y =merge=).
+  - Tareas y tableros de discusión (=issues=).
+- Herramientas gráficas para el análisis de un repositorio.
+- Publicación de páginas web en GitHub.
