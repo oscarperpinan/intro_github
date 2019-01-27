@@ -1,0 +1,120 @@
+#+TITLE: Introducción al control de versiones y trabajo colaborativo con GitHub
+#+AUTHOR: Oscar Perpiñán Lamigueiro
+#+DATE:
+#+STARTUP: beamer
+#+STARTUP: indent
+#+SETUPFILE: config.org
+#+OPTIONS: H:3
+
+* Conceptos básicos
+** ¿Qué es el control de versiones? 
+
+*** 
+:PROPERTIES:
+:beamer_opt: plain
+:END:
+#+ATTR_LATEX: :width 0.9\paperwidth
+[[file:figs/phdcomic_finaldoc_1.png]]
+
+[[http://phdcomics.com/comics/archive.php?comicid=1531]]
+
+*** 
+:PROPERTIES:
+:beamer_opt: plain
+:END:
+#+ATTR_LATEX: :width 0.9\paperwidth
+[[file:figs/phdcomic_finaldoc_2.png]]
+
+[[http://phdcomics.com/comics/archive.php?comicid=1531]]
+
+*** 
+:PROPERTIES:
+:beamer_opt: plain
+:END:
+#+ATTR_LATEX: :width 0.9\paperwidth
+[[file:figs/phdcomic_finaldoc_3.png]]
+
+[[http://phdcomics.com/comics/archive.php?comicid=1531]]
+
+*** ¿Qué es el control de versiones y por qué debería importarte?
+
+#+begin_quote
+El control de versiones es un sistema que *registra los cambios*
+realizados sobre un archivo o conjunto de archivos a lo largo del
+tiempo, de modo que se puedan *recuperar* versiones específicas más
+adelante.[fn:1]
+#+end_quote
+
+*** ¿Qué es el control de versiones y por qué debería importarte?
+
+#+begin_quote
+El control de versiones es el cuaderno de laboratorio en el
+mundo digital. Es lo que los profesionales usan para realizar un
+*seguimiento* de lo que han hecho y para *colaborar* con otras
+personas. Cada gran proyecto de desarrollo de software se basa en
+ello, y la mayoría de los programadores lo utilizan para sus
+trabajos. Y *no sirve sólo para software*: libros, documentos, pequeños
+conjuntos de datos y cualquier cosa que cambie con el tiempo o que
+deba compartirse puede y debe almacenarse en un sistema de control de
+versiones.[fn:2]
+#+end_quote
+
+*** Viajar en el tiempo
+- Nada que haya sido sometido a un control de versiones se pierde jamás (/salvo que realmente quieras eliminarlo.../)
+- *Todas* las versiones antiguas de un fichero se almacenan: un fichero se puede revertir a un estado anterior sin límites.
+*** ¿Qué? ¿Cuándo? ¿Quién?
+
+Un sistema de control de versiones registra:
+- El detalle de los cambios realizados.
+- La fecha y hora en la que fueron realizados.
+- La persona que los realizó.
+
+*** Trabajo Colaborativo
+
+- Cuando un equipo de personas trabaja conjuntamente en un proyecto, es posible que se produzcan cambios incompatibles en un mismo fichero.
+- El sistema de control de versiones *impide* cambios simultáneos en un fichero. A cambio, permite la *resolución de conflictos* y los documenta.
+
+** ¿Qué son Git y GitHub?  
+
+*** Git es un Sistema de Control de Versiones
+
+Git es una herramienta software (accesible mediante línea de comandos con =git=) que implementa un Sistema de Control de Versiones.
+
+Cada vez que se ejecuta un cambio en una estructura de ficheros controlada con Git, realiza una "foto" del estado de los archivos en ese momento, y guarda una referencia a esa instantánea. Por eficiencia, Git no almacena los archivos sin modificaciones sino un enlace al archivo anterior idéntico que ya está almacenado
+
+[[file:figs/git_model.png]]
+
+*** Los estados de Git
+- El desarrollador incorpora uno o varios ficheros al control de versiones. (/tracked/)
+- Realiza modificaciones en los ficheros (/modified/).
+- Incorpora esos ficheros modificados al área de preparación (/staged/).
+- Finalmente, confirma todos los cambios del área de preparación: se realiza la instantánea de los ficheros. (/committed/) 
+#+ATTR_LATEX: :height 0.4\textheight
+[[file:figs/git_estados.png]]
+
+*** ¿Qué es GitHub?
+
+GitHub es la plataforma de alojamiento de código más importante a nivel mundial. Emplea el sistema de control de versiones =git=, y ofrece una amplia variedad de funcionalidades para el alojamiento y revisión del código, el trabajo colaborativo, y la publicación de páginas web asociadas al repositorio de código.
+
+* Primeros pasos
+https://help.github.com/desktop/guides/
+** Creación de una cuenta en GitHub
+** Configuración del ordenador para el uso de la cuenta
+** Mi primer repositorio: crear y clonar
+* Flujo de trabajo con =git= y =GitHub=
+** Realizar y confirmar cambios (=add= y =commit=)
+** Publicar cambios (=push=)
+** Recibir cambios de un repositorio remoto y combinar con una copia local (=fetch=, =merge= y =pull=)
+* Trabajo en colaboración
+** Ramas (=branch=)
+** Combinación de código (=pull request= y =merge=)
+** Tareas y tableros de discusión (=issues=)
+** Herramientas gráficas para el análisis de un repositorio
+* GitHub Classroom
+* Publicación de páginas web en GitHub
+
+* Footnotes
+
+[fn:2]https://swcarpentry.github.io/git-novice/ 
+
+[fn:1]https://git-scm.com/book/es/v1/Empezando-Acerca-del-control-de-versiones 
