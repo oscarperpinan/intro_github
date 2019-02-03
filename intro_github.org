@@ -80,7 +80,16 @@ Un sistema de control de versiones registra:
 
 Git es una herramienta software (accesible mediante línea de comandos con =git=) que implementa un Sistema de Control de Versiones.
 
-Cada vez que se ejecuta un cambio en una estructura de ficheros controlada con Git, realiza una "foto" del estado de los archivos en ese momento, y guarda una referencia a esa instantánea. Por eficiencia, Git no almacena los archivos sin modificaciones sino un enlace al archivo anterior idéntico que ya está almacenado
+[[file:figs/git_model.png]]
+
+*** Git es un Sistema de Control de Versiones
+
+Cada vez que se ejecuta un cambio en una estructura de ficheros controlada con Git, realiza una "foto" del estado de los archivos en ese momento, y guarda una referencia a esa instantánea. 
+[[file:figs/git_model.png]]
+
+*** Git es un Sistema de Control de Versiones
+
+Por eficiencia, Git no almacena los archivos sin modificaciones sino un enlace al archivo anterior idéntico que ya está almacenado
 
 [[file:figs/git_model.png]]
 
@@ -94,13 +103,85 @@ Cada vez que se ejecuta un cambio en una estructura de ficheros controlada con G
 
 *** ¿Qué es GitHub?
 
-GitHub es la plataforma de alojamiento de código más importante a nivel mundial. Emplea el sistema de control de versiones =git=, y ofrece una amplia variedad de funcionalidades para el alojamiento y revisión del código, el trabajo colaborativo, y la publicación de páginas web asociadas al repositorio de código.
+- GitHub es la plataforma de alojamiento de código más importante a nivel mundial.
+- Emplea el sistema de control de versiones =git=
+- Ofrece una amplia variedad de funcionalidades
+  - Alojamiento de código
+  - Revisión de código
+  - Trabajo colaborativo
+  - Publicación de páginas web
 
 * Primeros pasos
+
+*** COMMENT Guías para principiantes
+
 https://help.github.com/desktop/guides/
-** Creación de una cuenta en GitHub
-** Configuración del ordenador para el uso de la cuenta
-** Mi primer repositorio: crear y clonar
+
+*** Creación de una cuenta en GitHub
+
+[[https://github.com/join]]
+
+[[file:figs/GitHub_Join.png]]
+
+Más información en [[https://help.github.com/articles/signing-up-for-a-new-github-account/][New GitHub account]]
+
+*** Instalación de GitHub Desktop
+https://desktop.github.com/
+
+[[file:figs/GitHub_Desktop.png]]
+
+*** Conectamos Git, GitHub y GitHub Desktop
+- Una vez instalado comienza el proceso de autenticación, usando las credenciales del paso anterior[fn:3]. 
+
+#+BEGIN_CENTER
+\boxed{File > Options > Accounts > Sign\ In}
+#+END_CENTER
+
+
+- A continuación, conectamos la información de usuario con Git[fn:4]. 
+
+#+BEGIN_CENTER
+\boxed{File > Options > Git}
+#+END_CENTER
+
+
+*** Nuevo repositorio desde github.com
+https://github.com/new
+
+[[file:figs/GitHub_New_Repository.png]]
+
+*** Nuevo repositorio desde GitHub Desktop
+
+#+BEGIN_CENTER
+\boxed{File > New\ Repository}
+#+END_CENTER
+
+#+ATTR_LATEX: :height 0.8\textheight
+[[file:figs/Desktop_NewRepository.png]]
+
+*** Clonar un repositorio remoto
+
+Si hemos creado el repositorio desde github.com (/repositorio remoto/), hay que clonarlo (/copia local/).
+
+#+BEGIN_CENTER
+\boxed{File > Clone\ Repository}
+#+END_CENTER
+
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:figs/Desktop_CloneRepository.png]]
+
+*** Publicar un repositorio local
+
+Si hemos creado el repositorio desde GitHub Desktop (/repositorio local/), hay que publicarlo en github.com (/remoto/)
+
+[[file:figs/Desktop_PublishRepository.png]]
+
+*** Consejos básicos
+
+- Elige bien el =.gitignore= (adecuado al proyecto). Veáse [[https://github.com/github/gitignore]].
+- No olvides cumplimentar el =README.md=. Para el formato veáse [[https://help.github.com/articles/basic-writing-and-formatting-syntax/][Formatting syntax]].
+- Elige una licencia adecuada a tu proyecto y a tus intereses actuales y futuros. Veáse https://choosealicense.com.
+
 * Flujo de trabajo con =git= y =GitHub=
 ** Realizar y confirmar cambios (=add= y =commit=)
 ** Publicar cambios (=push=)
@@ -114,6 +195,10 @@ https://help.github.com/desktop/guides/
 * Publicación de páginas web en GitHub
 
 * Footnotes
+
+[fn:4] Más información en [[https://help.github.com/desktop/guides/getting-started-with-github-desktop/configuring-git-for-github-desktop/][Configuring Git]].
+
+[fn:3] Más información en [[https://help.github.com/desktop/guides/getting-started-with-github-desktop/authenticating-to-github/][Authenticating to GitHub]].
 
 [fn:2]https://swcarpentry.github.io/git-novice/ 
 
