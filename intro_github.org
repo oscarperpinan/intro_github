@@ -280,10 +280,66 @@ Toda la actividad realizada en un repositorio puede verse de manera gráfica a t
 
 [[file:figs/repo_code_frequency_graph_dotcom.png]]
 
-* GitHub Classroom
 * Publicación de páginas web en GitHub
 
+*** Página web de usuario u organización
+
+1. Crea un repositorio nuevo con el nombre =<username>.github.io=[fn:6].
+2. Sube (=commit= + =push=) un fichero =index.html= a la rama =master= con código HTML.
+3. Con un navegador ve a la dirección [[https://<username>.github.io]]
+
+#+begin_src html
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Hello World</title>
+	</head>
+	<body>
+		Hello World!
+	</body>
+</html>
+#+end_src
+
+*** Página web de proyecto
+
+**** Si no sabes HTML
+
+- En la página del repositorio:
+
+#+begin_center
+\boxed{Settings > GitHub\ Pages > Source > master\ branch}
+
+\boxed{Settings > GitHub\ Pages > Theme\ Chooser}
+#+end_center
+
+- Modifica el fichero =README.md=[fn:7] (=commit= + =push=).
+
+- Con un navegador ve a la dirección [[https://<username>.github.io/<repository>]]
+
+*** Página web de proyecto
+
+**** Si sabes HTML
+
+- Crea una carpeta =docs= en la rama =master= del repositorio.
+
+- En esta carpeta =docs= crea/modifica un fichero =index.html= (=commit= + =push=).
+
+- En la página del repositorio:
+
+#+begin_center
+\boxed{Settings > GitHub\ Pages > Source > docs\ folder}
+#+end_center
+
+- Con un navegador ve a la dirección [[https://<username>.github.io/<repository>]]
+
+
+* GitHub Classroom
+
 * Footnotes
+
+[fn:7] Más información sobre formato Markdown https://guides.github.com/features/mastering-markdown/. 
+
+[fn:6] Siendo =<username>= tu nombre de usuario en GitHub. 
 
 [fn:5] Más detalles en [[https://help.github.com/categories/visualizing-repository-data-with-graphs/][Ver información del repositorio de forma gráfica]]. 
 

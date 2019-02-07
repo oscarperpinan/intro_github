@@ -21,4 +21,4 @@
 #+LATEX_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\tiny, formatcom = {\color{black!70}}}
 #+LATEX_HEADER: \beamertemplatenavigationsymbolsempty
 #+LATEX_HEADER: \setbeamertemplate{footline}[frame number]
-#+PROPERTY: header-args :tangle yes :comments org
+
