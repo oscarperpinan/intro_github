@@ -187,10 +187,92 @@ Si hemos creado el repositorio desde GitHub Desktop (/repositorio local/), hay q
 ** Publicar cambios (=push=)
 ** Recibir cambios de un repositorio remoto y combinar con una copia local (=fetch=, =merge= y =pull=)
 * Trabajo en colaboración
-** Ramas (=branch=)
-** Combinación de código (=pull request= y =merge=)
+Este flujo de trabajo está descrito en:  
+- Página Web: [[https://guides.github.com/introduction/flow/][Understanding the GitHub Flow]]
+- Vídeo: [[https://youtu.be/PBI2Rz-ZOxU][Understanding the GitHub Flow]]
+
+
+** Ramas
+
+*** Rama =master=
+[[file:figs/branching.png]]
+
+En un repositorio de GitHub existe una rama (/branch/) que se usa por defecto: *master*.
+
+*** Ramas para facilitar la colaboración
+[[file:figs/branching.png]]
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+Cuando hay varias personas trabajando sobre un mismo repositorio, es necesario crear nuevas ramas para evitar conflictos. De esta forma, cada persona hace cambios en el código en una rama específica.
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+[[file:figs/nueva_rama_desktop.png]]
+
+*** Combinación de código
+
+[[file:figs/branching.png]]
+
+Cuando los cambios están listos y confirmados (/commit/ + /push/ en la rama específica), se realiza una petición (/pull request/) para combinar estos cambios en la rama *master*.
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+[[file:figs/pull_request_desktop.png]]
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+[[file:figs/pull_request_web.png]]
+
+*** Combinación de código
+
+[[file:figs/branching.png]]
+
+
+El coordinador del proyecto es el encargado de revisar cada petición y, si todo está correcto, incluir los cambios (/merge/) en la rama *master*. 
+
+[[file:figs/merge_pull_request.png]]
+
+*** Resolución de conflictos
+
+Si no se pueden combinar los cambios automáticamente se produce un conflicto (por ejemplo, cuando dos usuarios modifican un mismo fichero).
+
+[[file:figs/conflict_web.png]]
+
+Un conflicto se debe resolver manualmente.
+[[file:figs/resolve_conflict_web.png]]
+
+*** Consejos
+- Las ramas accesorias utilizadas se pueden eliminar una vez finalizado el proceso.
+
+- Este proceso se debe repetir tantas veces como sea necesario para realizar cambios de forma colaborativa. 
+
+- *No olvides hacer /pull/ antes de iniciar una nueva interacción con el repositorio*.
+
 ** Tareas y tableros de discusión (=issues=)
 ** Herramientas gráficas para el análisis de un repositorio
+Toda la actividad realizada en un repositorio puede verse de manera gráfica a través del botón /Insights/ en la web del repositorio en GitHub: [[https://help.github.com/categories/visualizing-repository-data-with-graphs/][Ver información del repositorio de forma gráfica]]. 
+
+*** Contribución de los integrantes del equipo
+
+[[file:figs/repo_contributors_specific_graph.png]]
+
+*** Estructura de ramas
+
+[[file:figs/repo_network_graph.png]]
+
+*** Cambios en un repositorio
+
+[[file:figs/repo_code_frequency_graph_dotcom.png]]
+
 * GitHub Classroom
 * Publicación de páginas web en GitHub
 
