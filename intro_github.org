@@ -298,7 +298,35 @@ Un conflicto se debe resolver manualmente.
 - Vídeo: [[https://youtu.be/PBI2Rz-ZOxU][Understanding the GitHub Flow]]
 
 
-** Tareas y tableros de discusión (=issues=)
+** Persiguiendo a los bichos
+
+*** Issues
+
+Todos los repositorios de GitHub tienen una sección denominada "Issues"[fn:8] a modo de /bug tracker/.
+
+Pueden usarse para seguimiento de fallos, mejoras, tareas, etc.
+
+[[file:figs/github_issues.png]]
+
+*** Estructura de una issue
+
+Una issue es un tablero de discusión en el que pueden participar los responsables del repositorio y cualquier usuario de GitHub.
+
+*Debe* contener un título y una descripción.
+
+*Puede* contener etiquetas, metas, y responsables.
+
+[[file:figs/github_issue_example.png]]
+
+*** Contenido de una issue
+
+- En la descripción de una issue se debe suministrar toda la información posible para el responsable del repositorio, *incluyendo un ejemplo mínimo, completo y verificable*[fn:12]. 
+
+- El contenido será formateado como Markdown (incluye un /preview/)[fn:11]. 
+
+- Se pueden incluir referencias al código y a otras issues[fn:10].
+
+
 ** Herramientas gráficas para el análisis de un repositorio
 
 *** Insights 
@@ -382,6 +410,14 @@ https://classroom.github.com/assistant
 https://github.blog/2018-08-22-merge-conflicts-in-the-classroom/
 
 * Footnotes
+
+[fn:12]https://stackoverflow.com/help/mcve 
+
+[fn:11]Veáse la guía [[https://help.github.com/articles/basic-writing-and-formatting-syntax/][Basic Writing and Formatting syntax]]. 
+
+[fn:10]Veáse la guía [[https://help.github.com/articles/autolinked-references-and-urls/][Autolinked references and urls]]. 
+
+[fn:8]https://guides.github.com/features/issues/ 
 
 [fn:7] Más información sobre formato Markdown https://guides.github.com/features/mastering-markdown/. 
 
