@@ -220,20 +220,170 @@ Para obtener los cambios recientes que existan en el repositorio y no en la copi
 2. =git merge=, combinarlos con la copia local.
 
 * Trabajo en colaboración
-** Ramas (=branch=)
-** Combinación de código (=pull request= y =merge=)
+
+** Ramas
+
+*** Rama =master=
+[[file:figs/branching.png]]
+
+En un repositorio de GitHub existe una rama (/branch/) que se usa por defecto: *master*.
+
+*** Ramas para facilitar la colaboración
+[[file:figs/branching.png]]
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+Cuando hay varias personas trabajando sobre un mismo repositorio, es necesario crear nuevas ramas para evitar conflictos. De esta forma, cada persona hace cambios en el código en una rama específica.
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+[[file:figs/nueva_rama_desktop.png]]
+
+*** Combinación de código
+
+[[file:figs/branching.png]]
+
+Cuando los cambios están listos y confirmados (/commit/ + /push/ en la rama específica), se realiza una petición (/pull request/) para combinar estos cambios en la rama *master*.
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+[[file:figs/pull_request_desktop.png]]
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+[[file:figs/pull_request_web.png]]
+
+*** Combinación de código
+
+[[file:figs/branching.png]]
+
+
+El coordinador del proyecto es el encargado de revisar cada petición y, si todo está correcto, incluir los cambios (/merge/) en la rama *master*. 
+
+[[file:figs/merge_pull_request.png]]
+
+*** Resolución de conflictos
+
+Si no se pueden combinar los cambios automáticamente se produce un conflicto (por ejemplo, cuando dos usuarios modifican un mismo fichero).
+
+[[file:figs/conflict_web.png]]
+
+Un conflicto se debe resolver manualmente.
+[[file:figs/resolve_conflict_web.png]]
+
+*** Consejos
+- Las ramas accesorias utilizadas se pueden eliminar una vez finalizado el proceso.
+
+- Este proceso se debe repetir tantas veces como sea necesario para realizar cambios de forma colaborativa. 
+
+- *No olvides hacer /pull/ antes de iniciar una nueva interacción con el repositorio*.
+
+**** Más información en:
+- Página Web: [[https://guides.github.com/introduction/flow/][Understanding the GitHub Flow]]
+- Vídeo: [[https://youtu.be/PBI2Rz-ZOxU][Understanding the GitHub Flow]]
+
+
 ** Tareas y tableros de discusión (=issues=)
 ** Herramientas gráficas para el análisis de un repositorio
+<<<<<<< HEAD
 * GitHub Classroom
 https://github.blog/2018-03-06-how-to-use-group-assignments-in-github-classroom/
 
 https://classroom.github.com/assistant
 
 https://github.blog/2018-08-22-merge-conflicts-in-the-classroom/
+=======
+*** Insights 
+
+Toda la actividad realizada en un repositorio puede verse de manera gráfica a través del botón /Insights/ en la web del repositorio en GitHub[fn:5]. Por ejemplo,
+
+- Contribución de los integrantes del equipo
+- Estructuras de ramas de un repositorio
+- Histórico de cambios en un repositorio
+
+*** Contribución de los integrantes del equipo
+
+[[file:figs/repo_contributors_specific_graph.png]]
+
+*** Estructura de ramas de un repositorio
+
+[[file:figs/repo_network_graph.png]]
+
+*** Cambios en un repositorio
+
+[[file:figs/repo_code_frequency_graph_dotcom.png]]
+>>>>>>> colaboracion
 
 * Publicación de páginas web en GitHub
 
+*** Página web de usuario u organización
+
+1. Crea un repositorio nuevo con el nombre =<username>.github.io=[fn:6].
+2. Sube (=commit= + =push=) un fichero =index.html= a la rama =master= con código HTML.
+3. Con un navegador ve a la dirección [[https://<username>.github.io]]
+
+#+begin_src html
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Hello World</title>
+	</head>
+	<body>
+		Hello World!
+	</body>
+</html>
+#+end_src
+
+*** Página web de proyecto
+
+**** Si no sabes HTML
+
+- En la página del repositorio:
+
+#+begin_center
+\boxed{Settings > GitHub\ Pages > Source > master\ branch}
+
+\boxed{Settings > GitHub\ Pages > Theme\ Chooser}
+#+end_center
+
+- Modifica el fichero =README.md=[fn:7] (=commit= + =push=).
+
+- Con un navegador ve a la dirección [[https://<username>.github.io/<repository>]]
+
+*** Página web de proyecto
+
+**** Si sabes HTML
+
+- Crea una carpeta =docs= en la rama =master= del repositorio.
+
+- En esta carpeta =docs= crea/modifica un fichero =index.html= (=commit= + =push=).
+
+- En la página del repositorio:
+
+#+begin_center
+\boxed{Settings > GitHub\ Pages > Source > docs\ folder}
+#+end_center
+
+- Con un navegador ve a la dirección [[https://<username>.github.io/<repository>]]
+
+
+* GitHub Classroom
+
 * Footnotes
+
+[fn:7] Más información sobre formato Markdown https://guides.github.com/features/mastering-markdown/. 
+
+[fn:6] Siendo =<username>= tu nombre de usuario en GitHub. 
+
+[fn:5] Más detalles en [[https://help.github.com/categories/visualizing-repository-data-with-graphs/][Ver información del repositorio de forma gráfica]]. 
 
 [fn:4] Más información en [[https://help.github.com/desktop/guides/getting-started-with-github-desktop/configuring-git-for-github-desktop/][Configuring Git]].
 
