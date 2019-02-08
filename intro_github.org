@@ -293,14 +293,7 @@ Un conflicto se debe resolver manualmente.
 
 ** Tareas y tableros de discusión (=issues=)
 ** Herramientas gráficas para el análisis de un repositorio
-<<<<<<< HEAD
-* GitHub Classroom
-https://github.blog/2018-03-06-how-to-use-group-assignments-in-github-classroom/
 
-https://classroom.github.com/assistant
-
-https://github.blog/2018-08-22-merge-conflicts-in-the-classroom/
-=======
 *** Insights 
 
 Toda la actividad realizada en un repositorio puede verse de manera gráfica a través del botón /Insights/ en la web del repositorio en GitHub[fn:5]. Por ejemplo,
@@ -320,7 +313,6 @@ Toda la actividad realizada en un repositorio puede verse de manera gráfica a t
 *** Cambios en un repositorio
 
 [[file:figs/repo_code_frequency_graph_dotcom.png]]
->>>>>>> colaboracion
 
 * Publicación de páginas web en GitHub
 
@@ -375,7 +367,12 @@ Toda la actividad realizada en un repositorio puede verse de manera gráfica a t
 - Con un navegador ve a la dirección [[https://<username>.github.io/<repository>]]
 
 
-* GitHub Classroom
+* COMMENT GitHub Classroom
+https://github.blog/2018-03-06-how-to-use-group-assignments-in-github-classroom/
+
+https://classroom.github.com/assistant
+
+https://github.blog/2018-08-22-merge-conflicts-in-the-classroom/
 
 * Footnotes
 
