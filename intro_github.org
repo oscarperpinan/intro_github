@@ -111,8 +111,9 @@ Por eficiencia, Git no almacena los archivos sin modificaciones sino un enlace a
   - Trabajo colaborativo
   - Publicación de páginas web
 
-* Primeros pasos
+* Uso de =git= y =GitHub=
 
+** Primeros Pasos
 *** COMMENT Guías para principiantes
 
 https://help.github.com/desktop/guides/
@@ -182,16 +183,54 @@ Si hemos creado el repositorio desde GitHub Desktop (/repositorio local/), hay q
 - No olvides cumplimentar el =README.md=. Para el formato veáse [[https://help.github.com/articles/basic-writing-and-formatting-syntax/][Formatting syntax]].
 - Elige una licencia adecuada a tu proyecto y a tus intereses actuales y futuros. Veáse https://choosealicense.com.
 
-* Flujo de trabajo con =git= y =GitHub=
-** Realizar y confirmar cambios (=add= y =commit=)
-** Publicar cambios (=push=)
-** Recibir cambios de un repositorio remoto y combinar con una copia local (=fetch=, =merge= y =pull=)
+
+** Flujo de Trabajo
+
+*** Realizar y confirmar cambios (=add= y =commit=)
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+- Modifica los ficheros de la copia local.
+- Añade los cambios realizados a la siguiente "instantánea" del repositorio: 
+#+begin_center
+=git add=
+#+end_center
+- Confirma los cambios (escribiendo un resumen de lo realizado): 
+#+begin_center
+=git commit=
+#+end_center
+
+****                                                               :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+[[file:figs/git_commit.png]]
+
+*** Historia
+
+[[file:figs/git_history.png]]
+
+*** Publicar cambios (=push=)
+Para sincronizar los cambios realizados en la copia local con el repositorio remoto hay que publicar mediante =git push=.
+*** Recibir cambios de un repositorio remoto
+Para obtener los cambios recientes que existan en el repositorio y no en la copia local hay que emplear =git pull=, que es la combinación de la secuencia:
+1. =git fetch=, obtener datos recientes del repositorio.
+2. =git merge=, combinarlos con la copia local.
+
 * Trabajo en colaboración
 ** Ramas (=branch=)
 ** Combinación de código (=pull request= y =merge=)
 ** Tareas y tableros de discusión (=issues=)
 ** Herramientas gráficas para el análisis de un repositorio
 * GitHub Classroom
+https://github.blog/2018-03-06-how-to-use-group-assignments-in-github-classroom/
+
+https://classroom.github.com/assistant
+
+https://github.blog/2018-08-22-merge-conflicts-in-the-classroom/
+
 * Publicación de páginas web en GitHub
 
 * Footnotes

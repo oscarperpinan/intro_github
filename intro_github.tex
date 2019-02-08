@@ -1,4 +1,4 @@
-% Created 2019-02-03 do. 19:51
+% Created 2019-02-04 lun 13:41
 % Intended LaTeX compiler: pdflatex
 \documentclass[xcolor={usenames,svgnames,dvipsnames}]{beamer}
 \usepackage[utf8]{inputenc}
@@ -43,18 +43,18 @@
  pdftitle={Introducción al control de versiones y trabajo colaborativo con GitHub},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 26.1 (Org mode 9.1.14)}, 
+ pdfcreator={Emacs 26.1 (Org mode 9.2)}, 
  pdflang={Spanish}}
 \begin{document}
 
 \maketitle
 
 \section{Conceptos básicos}
-\label{sec:org340ead2}
+\label{sec:org1e990eb}
 \subsection{¿Qué es el control de versiones?}
-\label{sec:org7761d42}
+\label{sec:org0c7bcc6}
 
-\begin{frame}[plain,label={sec:org22007e0}]{}
+\begin{frame}[label={sec:orgfad6d7e},plain]{}
 \begin{center}
 \includegraphics[width=0.9\paperwidth]{figs/phdcomic_finaldoc_1.png}
 \end{center}
@@ -62,7 +62,7 @@
 \url{http://phdcomics.com/comics/archive.php?comicid=1531}
 \end{frame}
 
-\begin{frame}[plain,label={sec:org460f4b1}]{}
+\begin{frame}[label={sec:org3646db5},plain]{}
 \begin{center}
 \includegraphics[width=0.9\paperwidth]{figs/phdcomic_finaldoc_2.png}
 \end{center}
@@ -70,7 +70,7 @@
 \url{http://phdcomics.com/comics/archive.php?comicid=1531}
 \end{frame}
 
-\begin{frame}[plain,label={sec:org1e1fcbd}]{}
+\begin{frame}[label={sec:org732b253},plain]{}
 \begin{center}
 \includegraphics[width=0.9\paperwidth]{figs/phdcomic_finaldoc_3.png}
 \end{center}
@@ -78,7 +78,7 @@
 \url{http://phdcomics.com/comics/archive.php?comicid=1531}
 \end{frame}
 
-\begin{frame}[label={sec:org4eaf16e}]{¿Qué es el control de versiones y por qué debería importarte?}
+\begin{frame}[label={sec:org55dccbb}]{¿Qué es el control de versiones y por qué debería importarte?}
 \begin{quote}
 El control de versiones es un sistema que \alert{registra los cambios}
 realizados sobre un archivo o conjunto de archivos a lo largo del
@@ -87,7 +87,7 @@ adelante.\footnote{\url{https://git-scm.com/book/es/v1/Empezando-Acerca-del-cont
 \end{quote}
 \end{frame}
 
-\begin{frame}[label={sec:org3f7db68}]{¿Qué es el control de versiones y por qué debería importarte?}
+\begin{frame}[label={sec:org02109db}]{¿Qué es el control de versiones y por qué debería importarte?}
 \begin{quote}
 El control de versiones es el cuaderno de laboratorio en el
 mundo digital. Es lo que los profesionales usan para realizar un
@@ -101,13 +101,13 @@ versiones.\footnote{\url{https://swcarpentry.github.io/git-novice/}}
 \end{quote}
 \end{frame}
 
-\begin{frame}[label={sec:orgefbb04c}]{Viajar en el tiempo}
+\begin{frame}[label={sec:orgae83b07}]{Viajar en el tiempo}
 \begin{itemize}
 \item Nada que haya sido sometido a un control de versiones se pierde jamás (\emph{salvo que realmente quieras eliminarlo\ldots{}})
 \item \alert{Todas} las versiones antiguas de un fichero se almacenan: un fichero se puede revertir a un estado anterior sin límites.
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org1988730}]{¿Qué? ¿Cuándo? ¿Quién?}
+\begin{frame}[label={sec:org3910b23}]{¿Qué? ¿Cuándo? ¿Quién?}
 Un sistema de control de versiones registra:
 \begin{itemize}
 \item El detalle de los cambios realizados.
@@ -116,7 +116,7 @@ Un sistema de control de versiones registra:
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org89924b4}]{Trabajo Colaborativo}
+\begin{frame}[label={sec:orgd0ac34f}]{Trabajo Colaborativo}
 \begin{itemize}
 \item Cuando un equipo de personas trabaja conjuntamente en un proyecto, es posible que se produzcan cambios incompatibles en un mismo fichero.
 \item El sistema de control de versiones \alert{impide} cambios simultáneos en un fichero. A cambio, permite la \alert{resolución de conflictos} y los documenta.
@@ -124,9 +124,9 @@ Un sistema de control de versiones registra:
 \end{frame}
 
 \subsection{¿Qué son Git y GitHub?}
-\label{sec:orgf9466cc}
+\label{sec:org58bbeeb}
 
-\begin{frame}[fragile,label={sec:orgabfe05e}]{Git es un Sistema de Control de Versiones}
+\begin{frame}[label={sec:orgaefe486},fragile]{Git es un Sistema de Control de Versiones}
  Git es una herramienta software (accesible mediante línea de comandos con \texttt{git}) que implementa un Sistema de Control de Versiones.
 
 \begin{center}
@@ -134,14 +134,14 @@ Un sistema de control de versiones registra:
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org0b30808}]{Git es un Sistema de Control de Versiones}
+\begin{frame}[label={sec:org27a957f}]{Git es un Sistema de Control de Versiones}
 Cada vez que se ejecuta un cambio en una estructura de ficheros controlada con Git, realiza una \guillemotleft{}foto\guillemotright{} del estado de los archivos en ese momento, y guarda una referencia a esa instantánea. 
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/git_model.png}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org197f209}]{Git es un Sistema de Control de Versiones}
+\begin{frame}[label={sec:org7314a6a}]{Git es un Sistema de Control de Versiones}
 Por eficiencia, Git no almacena los archivos sin modificaciones sino un enlace al archivo anterior idéntico que ya está almacenado
 
 \begin{center}
@@ -149,7 +149,7 @@ Por eficiencia, Git no almacena los archivos sin modificaciones sino un enlace a
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org323add3}]{Los estados de Git}
+\begin{frame}[label={sec:org74eb9c0}]{Los estados de Git}
 \begin{itemize}
 \item El desarrollador incorpora uno o varios ficheros al control de versiones. (\emph{tracked})
 \item Realiza modificaciones en los ficheros (\emph{modified}).
@@ -161,7 +161,7 @@ Por eficiencia, Git no almacena los archivos sin modificaciones sino un enlace a
 \end{center}
 \end{frame}
 
-\begin{frame}[fragile,label={sec:orgac99128}]{¿Qué es GitHub?}
+\begin{frame}[label={sec:org124427f},fragile]{¿Qué es GitHub?}
  \begin{itemize}
 \item GitHub es la plataforma de alojamiento de código más importante a nivel mundial.
 \item Emplea el sistema de control de versiones \texttt{git}
@@ -175,10 +175,12 @@ Por eficiencia, Git no almacena los archivos sin modificaciones sino un enlace a
 \end{itemize}
 \end{frame}
 
-\section{Primeros pasos}
-\label{sec:org08caa82}
+\section{Uso de \texttt{git} y \texttt{GitHub}}
+\label{sec:org3f35e3f}
 
-\begin{frame}[label={sec:org066d240}]{Creación de una cuenta en GitHub}
+\subsection{Primeros Pasos}
+\label{sec:orga44b909}
+\begin{frame}[label={sec:orgf3d2964}]{Creación de una cuenta en GitHub}
 \url{https://github.com/join}
 
 \begin{center}
@@ -188,7 +190,7 @@ Por eficiencia, Git no almacena los archivos sin modificaciones sino un enlace a
 Más información en \href{https://help.github.com/articles/signing-up-for-a-new-github-account/}{New GitHub account}
 \end{frame}
 
-\begin{frame}[label={sec:org4cbe80d}]{Instalación de GitHub Desktop}
+\begin{frame}[label={sec:orgefebe4e}]{Instalación de GitHub Desktop}
 \url{https://desktop.github.com/}
 
 \begin{center}
@@ -196,7 +198,7 @@ Más información en \href{https://help.github.com/articles/signing-up-for-a-new
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgbdc863d}]{Conectamos Git, GitHub y GitHub Desktop}
+\begin{frame}[label={sec:org3f8f072}]{Conectamos Git, GitHub y GitHub Desktop}
 \begin{itemize}
 \item Una vez instalado comienza el proceso de autenticación, usando las credenciales del paso anterior\footnote{Más información en \href{https://help.github.com/desktop/guides/getting-started-with-github-desktop/authenticating-to-github/}{Authenticating to GitHub}.}.
 \end{itemize}
@@ -216,7 +218,7 @@ Más información en \href{https://help.github.com/articles/signing-up-for-a-new
 \end{frame}
 
 
-\begin{frame}[label={sec:org1a3b752}]{Nuevo repositorio desde github.com}
+\begin{frame}[label={sec:orga6b9464}]{Nuevo repositorio desde github.com}
 \url{https://github.com/new}
 
 \begin{center}
@@ -224,7 +226,7 @@ Más información en \href{https://help.github.com/articles/signing-up-for-a-new
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgfdd0266}]{Nuevo repositorio desde GitHub Desktop}
+\begin{frame}[label={sec:org2de67ba}]{Nuevo repositorio desde GitHub Desktop}
 \begin{center}
 \boxed{File > New\ Repository}
 \end{center}
@@ -234,7 +236,7 @@ Más información en \href{https://help.github.com/articles/signing-up-for-a-new
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgbfda411}]{Clonar un repositorio remoto}
+\begin{frame}[label={sec:orgb0acf29}]{Clonar un repositorio remoto}
 Si hemos creado el repositorio desde github.com (\emph{repositorio remoto}), hay que clonarlo (\emph{copia local}).
 
 \begin{center}
@@ -246,7 +248,7 @@ Si hemos creado el repositorio desde github.com (\emph{repositorio remoto}), hay
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org8a8eac6}]{Publicar un repositorio local}
+\begin{frame}[label={sec:org1ef1b76}]{Publicar un repositorio local}
 Si hemos creado el repositorio desde GitHub Desktop (\emph{repositorio local}), hay que publicarlo en github.com (\emph{remoto})
 
 \begin{center}
@@ -254,34 +256,67 @@ Si hemos creado el repositorio desde GitHub Desktop (\emph{repositorio local}), 
 \end{center}
 \end{frame}
 
-\begin{frame}[fragile,label={sec:org07cf12c}]{Consejos básicos}
+\begin{frame}[label={sec:orga93426a},fragile]{Consejos básicos}
  \begin{itemize}
 \item Elige bien el \texttt{.gitignore} (adecuado al proyecto). Veáse \url{https://github.com/github/gitignore}.
-\item No olvides cumplimentar el \texttt{README.md}. Para formato veáse \href{https://help.github.com/articles/basic-writing-and-formatting-syntax/}{Formatting syntax}.
+\item No olvides cumplimentar el \texttt{README.md}. Para el formato veáse \href{https://help.github.com/articles/basic-writing-and-formatting-syntax/}{Formatting syntax}.
 \item Elige una licencia adecuada a tu proyecto y a tus intereses actuales y futuros. Veáse \url{https://choosealicense.com}.
 \end{itemize}
 \end{frame}
 
-\section{Flujo de trabajo con \texttt{git} y \texttt{GitHub}}
-\label{sec:orgb5c40f5}
-\subsection{Realizar y confirmar cambios (\texttt{add} y \texttt{commit})}
-\label{sec:orgaddeecc}
-\subsection{Publicar cambios (\texttt{push})}
-\label{sec:org0c6c607}
-\subsection{Recibir cambios de un repositorio remoto y combinar con una copia local (\texttt{fetch}, \texttt{merge} y \texttt{pull})}
-\label{sec:org88b5c09}
+
+\subsection{Flujo de Trabajo}
+\label{sec:orga6b6f34}
+
+\begin{frame}[label={sec:org0b083c7},fragile]{Realizar y confirmar cambios (\texttt{add} y \texttt{commit})}
+ \begin{columns}
+\begin{column}{0.5\columnwidth}
+\begin{itemize}
+\item Modifica los ficheros de la copia local.
+\item Añade los cambios realizados a la siguiente \guillemotleft{}instantánea\guillemotright{} del repositorio:
+\end{itemize}
+\begin{center}
+\texttt{git add}
+\end{center}
+\begin{itemize}
+\item Confirma los cambios (escribiendo un resumen de lo realizado):
+\end{itemize}
+\begin{center}
+\texttt{git commit}
+\end{center}
+\end{column}
+
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[width=.9\linewidth]{figs/git_commit.png}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label={sec:org44cbae1},fragile]{Publicar cambios (\texttt{push})}
+ Para sincronizar los cambios realizados en la copia local con el repositorio remoto hay que publicar mediante \texttt{git push}.
+\end{frame}
+\begin{frame}[label={sec:org7f3fc6f},fragile]{Recibir cambios de un repositorio remoto}
+ Para obtener los cambios recientes que existan en el repositorio y no en la copia local hay que emplear \texttt{git pull}, que es la combinación de la secuencia:
+\begin{enumerate}
+\item \texttt{git fetch}, obtener datos recientes del repositorio.
+\item \texttt{git merge}, combinarlos con la copia local.
+\end{enumerate}
+\end{frame}
+
 \section{Trabajo en colaboración}
-\label{sec:org88a95ed}
+\label{sec:org71f1610}
 \subsection{Ramas (\texttt{branch})}
-\label{sec:orga477602}
+\label{sec:org9aa3c8b}
 \subsection{Combinación de código (\texttt{pull request} y \texttt{merge})}
-\label{sec:org22d8e5d}
+\label{sec:orgef97ace}
 \subsection{Tareas y tableros de discusión (\texttt{issues})}
-\label{sec:orgf8b0102}
+\label{sec:orgc62fa49}
 \subsection{Herramientas gráficas para el análisis de un repositorio}
-\label{sec:org1595c41}
+\label{sec:org8c7a92f}
 \section{GitHub Classroom}
-\label{sec:org08ba361}
+\label{sec:orgad19371}
 \section{Publicación de páginas web en GitHub}
-\label{sec:org7dd0b85}
+\label{sec:orgaadbc2e}
 \end{document}
