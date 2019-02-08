@@ -49,11 +49,13 @@ adelante.[fn:1]
 
 #+begin_quote
 El control de versiones es el cuaderno de laboratorio en el
-mundo digital. Es lo que los profesionales usan para realizar un
+mundo digital. 
+
+Es lo que los profesionales usan para realizar un
 *seguimiento* de lo que han hecho y para *colaborar* con otras
-personas. Cada gran proyecto de desarrollo de software se basa en
-ello, y la mayoría de los programadores lo utilizan para sus
-trabajos. Y *no sirve sólo para software*: libros, documentos, pequeños
+personas. 
+
+*No sirve sólo para software*: libros, documentos, pequeños
 conjuntos de datos y cualquier cosa que cambie con el tiempo o que
 deba compartirse puede y debe almacenarse en un sistema de control de
 versiones.[fn:2]
@@ -186,38 +188,41 @@ Si hemos creado el repositorio desde GitHub Desktop (/repositorio local/), hay q
 
 ** Flujo de Trabajo
 
-*** Realizar y confirmar cambios (=add= y =commit=)
+*** Cambios en la copia local
 
-****                                                               :BMCOL:
-:PROPERTIES:
-:BEAMER_col: 0.5
-:END:
 - Modifica los ficheros de la copia local.
-- Añade los cambios realizados a la siguiente "instantánea" del repositorio: 
-#+begin_center
-=git add=
-#+end_center
-- Confirma los cambios (escribiendo un resumen de lo realizado): 
-#+begin_center
-=git commit=
-#+end_center
+- Añade los cambios realizados a la siguiente "instantánea" del repositorio (=git add=) [[file:figs/git_add.png]]
+- Confirma los cambios, escribiendo un resumen de lo realizado (=git commit=)
+  #+ATTR_LATEX: :height 0.3\textheight
+ [[file:figs/git_commit.png]]
 
-****                                                               :BMCOL:
-:PROPERTIES:
-:BEAMER_col: 0.5
-:END:
-[[file:figs/git_commit.png]]
+*** Histórico de cambios
 
-*** Historia
+Los cambios confirmados con =commit= se anotan en la historia (=git log=)
+
+#+begin_center
+\boxed{View > History}
+#+end_center
 
 [[file:figs/git_history.png]]
 
-*** Publicar cambios (=push=)
-Para sincronizar los cambios realizados en la copia local con el repositorio remoto hay que publicar mediante =git push=.
+*** Publicar cambios al repositorio remoto
+
+- Para sincronizar  los cambios realizados en la copia local con el repositorio remoto hay que publicar mediante =git push=.
+
+#+begin_center
+\boxed{Repository > Push}
+#+end_center
+
+- A partir de este punto, la copia local y el repositorio remoto están sincronizados.
 *** Recibir cambios de un repositorio remoto
 Para obtener los cambios recientes que existan en el repositorio y no en la copia local hay que emplear =git pull=, que es la combinación de la secuencia:
-1. =git fetch=, obtener datos recientes del repositorio.
-2. =git merge=, combinarlos con la copia local.
+1. =git fetch=, para obtener los cambios recientes del repositorio remoto.
+2. =git merge=, para combinarlos con la copia local.
+
+#+begin_center
+\boxed{Repository > Pull}
+#+end_center
 
 * Trabajo en colaboración
 
@@ -235,7 +240,9 @@ En un repositorio de GitHub existe una rama (/branch/) que se usa por defecto: *
 :PROPERTIES:
 :BEAMER_col: 0.6
 :END:
-Cuando hay varias personas trabajando sobre un mismo repositorio, es necesario crear nuevas ramas para evitar conflictos. De esta forma, cada persona hace cambios en el código en una rama específica.
+Cuando hay varias personas trabajando sobre un mismo repositorio, es necesario crear nuevas ramas para evitar conflictos. 
+
+De esta forma, cada persona hace cambios en el código en una rama específica.
 
 ****                                                               :BMCOL:
 :PROPERTIES:
