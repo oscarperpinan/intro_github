@@ -179,7 +179,7 @@ Si hemos creado el repositorio desde GitHub Desktop (/repositorio local/), hay q
 
 [[file:figs/Desktop_PublishRepository.png]]
 
-*** Consejos básicos
+*** Consejos
 
 - Elige bien el =.gitignore= (adecuado al proyecto). Veáse [[https://github.com/github/gitignore]].
 - No olvides cumplimentar el =README.md=. Para el formato veáse [[https://help.github.com/articles/basic-writing-and-formatting-syntax/][Formatting syntax]].
@@ -195,7 +195,6 @@ Si hemos creado el repositorio desde GitHub Desktop (/repositorio local/), hay q
 - Confirma los cambios, escribiendo un resumen de lo realizado (=git commit=)
   #+ATTR_LATEX: :height 0.3\textheight
  [[file:figs/git_commit.png]]
-
 *** Histórico de cambios
 
 Los cambios confirmados con =commit= se anotan en la historia (=git log=)
@@ -205,6 +204,7 @@ Los cambios confirmados con =commit= se anotan en la historia (=git log=)
 #+end_center
 
 [[file:figs/git_history.png]]
+
 
 *** Publicar cambios al repositorio remoto
 
@@ -223,15 +223,22 @@ Para obtener los cambios recientes que existan en el repositorio y no en la copi
 #+begin_center
 \boxed{Repository > Pull}
 #+end_center
+*** Consejos
 
+- /Commit early and often/: cada =commit= debe incluir cambios pequeños y coherentes.
+
+- Escribir un mensaje de calidad al ejecutar cambios facilita tanto el trabajo personal como la colaboración en equipo con Git.[fn:9]
+**** Recomendaciones
+- El título debe ser conciso (50 caracteres) y escrito en imperativo (/Do something.../)
+- El cuerpo debe explicar el qué y el por qué del cambio, no el cómo, comparando con el comportamiento anterior al cambio.
+- Se pueden incluir referencias a /issues/ (ver a continuación) con #XX siendo XX el número de la /issue/.
 * Trabajo en colaboración
-
 ** Ramas
 
 *** Rama =master=
 [[file:figs/branching.png]]
 
-En un repositorio de GitHub existe una rama (/branch/) que se usa por defecto: *master*.
+En un repositorio de GitHub existe una rama (/branch/) que se usa por defecto: *master*[fn:13].
 
 *** Ramas para facilitar la colaboración
 [[file:figs/branching.png]]
@@ -242,7 +249,7 @@ En un repositorio de GitHub existe una rama (/branch/) que se usa por defecto: *
 :END:
 Cuando hay varias personas trabajando sobre un mismo repositorio, es necesario crear nuevas ramas para evitar conflictos. 
 
-De esta forma, cada persona hace cambios en el código en una rama específica.
+De esta forma, cada persona implementa *cambios* en una *rama determinada* de forma paralela al resto del equipo.
 
 ****                                                               :BMCOL:
 :PROPERTIES:
@@ -287,16 +294,16 @@ Un conflicto se debe resolver manualmente.
 [[file:figs/resolve_conflict_web.png]]
 
 *** Consejos
-- Las ramas accesorias utilizadas se pueden eliminar una vez finalizado el proceso.
-
-- Este proceso se debe repetir tantas veces como sea necesario para realizar cambios de forma colaborativa. 
 
 - *No olvides hacer /pull/ antes de iniciar una nueva interacción con el repositorio*.
 
-**** Más información en:
-- Página Web: [[https://guides.github.com/introduction/flow/][Understanding the GitHub Flow]]
-- Vídeo: [[https://youtu.be/PBI2Rz-ZOxU][Understanding the GitHub Flow]]
+- Recuerda las recomendaciones sobre un buen mensaje de =git commit=.
 
+- *Organización previa*: las *tareas* asignadas a un rama deben ser *independientes* de las otras ramas para evitar conflictos.
+
+- Cuando el trabajo en una rama ha concluido, hay que *combinar cambios con master lo antes posible* para reducir la posibilidad de conflicto. Las ramas accesorias utilizadas se pueden eliminar una vez finalizado el proceso.
+
+- Este proceso se debe repetir tantas veces como sea necesario para realizar cambios de forma colaborativa. 
 
 ** Persiguiendo a los bichos
 
@@ -410,6 +417,10 @@ https://classroom.github.com/assistant
 https://github.blog/2018-08-22-merge-conflicts-in-the-classroom/
 
 * Footnotes
+
+[fn:13][[https://guides.github.com/introduction/flow/][Understanding the GitHub Flow]] 
+
+[fn:9]https://chris.beams.io/posts/git-commit/ 
 
 [fn:12]https://stackoverflow.com/help/mcve 
 
