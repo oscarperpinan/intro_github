@@ -416,6 +416,16 @@ https://classroom.github.com/assistant
 
 https://github.blog/2018-08-22-merge-conflicts-in-the-classroom/
 
+** Resumen de lo hecho en AIGORA
+- Se pueden hacer varias aulas (classrooms con una única organization de GitHub)
+- Usamos GitHub Classroom únicamente para configurar los Teams.
+- Subimos un roster a cada aula (lista de correos alumnos.upm.es)
+- En cada classroom abrimos una Group Assignment denominada "registro_estudiantes". Le ponemos un identificador al "Group" igual al grupo de matriculación. Este Group queda almacenado en GitHub classroom para futuros assignment, pero no crea un Team en GitHub.
+- Abrimos el enlace del assignment con nuestro usuario (podemos hacer skip cuando nos pide que enlacemos a algún miembro del roster), y creamos un nuevo Team, que se debe llamar igual que el grupo de matriculación. Este paso crea un nuevo Team en la organization de Github. Lo podemos usar para dar permisos.
+- Ahora le enviamos el enlace del assignment a los alumnos para que enlacen su usuario de GitHub a su correo incluido en el roster. 
+- Deben elegir el Team que hemos definido nosotros, sin crear uno nuevo. A partir de este punto, están incluidos en este Team, y por tanto adquieren los mismos permisos y repositorios que el Team.
+- Para el trabajo en equipo hacemos una group assignment, pero les dejamos libertad a la hora de definir los Teams.
+
 * Footnotes
 
 [fn:13][[https://guides.github.com/introduction/flow/][Understanding the GitHub Flow]] 
