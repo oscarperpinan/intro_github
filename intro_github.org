@@ -147,54 +147,68 @@ https://desktop.github.com/
 \boxed{File > Options > Git}
 #+END_CENTER
 
+*** Remoto y Local
 
-*** Nuevo repositorio desde github.com
+- *Github.com* aloja los *repositorios remotos* (nube).
+- En tu ordenador trabajas con una *copia local* del repositorio. Otros desarrolladores tendrán sus propias copias locales.
+- La(s) copia(s) local(es) y el repositorio remoto deben estar *sincronizados* mediante diferentes comandos de =git=.
+
+*** Nuevo repositorio /remoto/ desde github.com
 https://github.com/new
 
 [[file:figs/GitHub_New_Repository.png]]
 
-*** Nuevo repositorio desde GitHub Desktop
+*** Nuevo repositorio /local/ desde GitHub Desktop
 
 #+BEGIN_CENTER
 \boxed{File > New\ Repository}
 #+END_CENTER
 
-#+ATTR_LATEX: :height 0.8\textheight
+#+ATTR_LATEX: :height 0.7\textheight
 [[file:figs/Desktop_NewRepository.png]]
+
+*** Decisiones al crear un repositorio
+
+- Elige un *=.gitignore=* adecuado al proyecto: Veáse [[https://github.com/github/gitignore]].
+- No olvides inicializar y cumplimentar el *=README.md=*. Para el formato veáse [[https://help.github.com/articles/basic-writing-and-formatting-syntax/][Formatting syntax]].
+- Elige una *licencia* adecuada a tu proyecto y a tus intereses actuales y futuros. Veáse https://choosealicense.com.
 
 *** Clonar un repositorio remoto
 
-Si hemos creado el repositorio desde github.com (/repositorio remoto/), hay que clonarlo (/copia local/).
+Si hemos creado el repositorio desde github.com (/repositorio remoto/), hay que clonarlo para poder trabajar con él (/copia local/).
 
 #+BEGIN_CENTER
 \boxed{File > Clone\ Repository}
 #+END_CENTER
 
-#+ATTR_LATEX: :height 0.7\textheight
+#+ATTR_LATEX: :height 0.65\textheight
 [[file:figs/Desktop_CloneRepository.png]]
 
 *** Publicar un repositorio local
 
-Si hemos creado el repositorio desde GitHub Desktop (/repositorio local/), hay que publicarlo en github.com (/remoto/)
+Si hemos creado el repositorio desde GitHub Desktop (/repositorio local/), hay que publicarlo en github.com (/repositorio remoto/)
 
 [[file:figs/Desktop_PublishRepository.png]]
-
-*** Consejos
-
-- Elige bien el =.gitignore= (adecuado al proyecto). Veáse [[https://github.com/github/gitignore]].
-- No olvides cumplimentar el =README.md=. Para el formato veáse [[https://help.github.com/articles/basic-writing-and-formatting-syntax/][Formatting syntax]].
-- Elige una licencia adecuada a tu proyecto y a tus intereses actuales y futuros. Veáse https://choosealicense.com.
 
 
 ** Flujo de Trabajo
 
 *** Cambios en la copia local
 
-- Modifica los ficheros de la copia local.
-- Añade los cambios realizados a la siguiente "instantánea" del repositorio (=git add=) [[file:figs/git_add.png]]
-- Confirma los cambios, escribiendo un resumen de lo realizado (=git commit=)
+1. Modifica los ficheros de la copia local.
+2. Añade los cambios realizados a la siguiente "instantánea" del repositorio (=git add=) [[file:figs/git_add.png]]
+3. Confirma los cambios, escribiendo un resumen de lo realizado (=git commit=)
   #+ATTR_LATEX: :height 0.3\textheight
  [[file:figs/git_commit.png]]
+*** Como escribir un buen mensaje de =commit=
+
+- /Commit early and often/: cada =commit= debe incluir cambios pequeños y coherentes.
+
+- Escribir un mensaje de calidad al ejecutar cambios facilita tanto el trabajo personal como la colaboración en equipo con Git.[fn:9]
+**** Recomendaciones
+- El *título* debe ser *conciso* (50 caracteres) y escrito en imperativo (/Do something.../)
+- El *cuerpo* debe explicar *el qué y el por qué del cambio*, no el cómo, comparando con el comportamiento anterior al cambio.
+- Se pueden incluir referencias a /issues/ (ver a continuación) con #XX siendo XX el número de la /issue/.
 *** Histórico de cambios
 
 Los cambios confirmados con =commit= se anotan en la historia (=git log=)
@@ -208,30 +222,30 @@ Los cambios confirmados con =commit= se anotan en la historia (=git log=)
 
 *** Publicar cambios al repositorio remoto
 
-- Para sincronizar  los cambios realizados en la copia local con el repositorio remoto hay que publicar mediante =git push=.
+- Para sincronizar  los cambios realizados *desde la copia local hasta el repositorio remoto* hay que publicar mediante =git push=.
 
 #+begin_center
 \boxed{Repository > Push}
 #+end_center
 
 - A partir de este punto, la copia local y el repositorio remoto están sincronizados.
+
+**** Importante
+En el caso de repositorios compartidos, antes de un =git push= es imprescindible actualizar la copia local incorporando los cambios del repositorio con =git pull=.
 *** Recibir cambios de un repositorio remoto
-Para obtener los cambios recientes que existan en el repositorio y no en la copia local hay que emplear =git pull=, que es la combinación de la secuencia:
+Para obtener en la copia local los cambios recientes que existan en el repositorio hay que emplear =git pull=, que es la combinación de la secuencia:
 1. =git fetch=, para obtener los cambios recientes del repositorio remoto.
 2. =git merge=, para combinarlos con la copia local.
 
 #+begin_center
 \boxed{Repository > Pull}
 #+end_center
-*** Consejos
+*** Resumen
 
-- /Commit early and often/: cada =commit= debe incluir cambios pequeños y coherentes.
-
-- Escribir un mensaje de calidad al ejecutar cambios facilita tanto el trabajo personal como la colaboración en equipo con Git.[fn:9]
-**** Recomendaciones
-- El título debe ser conciso (50 caracteres) y escrito en imperativo (/Do something.../)
-- El cuerpo debe explicar el qué y el por qué del cambio, no el cómo, comparando con el comportamiento anterior al cambio.
-- Se pueden incluir referencias a /issues/ (ver a continuación) con #XX siendo XX el número de la /issue/.
+1. Realiza modificaciones en los ficheros de la copia local.
+2. *COMMIT* :: Confirma los cambios con un mensaje informativo.
+3. *PULL* :: Incorpora los cambios del repositorio remoto a la copia local.
+4. *PUSH* :: Publica los cambios de la copia local al repositorio remoto.
 * Trabajo en colaboración
 ** Ramas
 
