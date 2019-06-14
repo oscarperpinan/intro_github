@@ -6,6 +6,15 @@
 #+SETUPFILE: config.org
 #+OPTIONS: H:3
 
+*** AIGORA
+
+Lo expuesto en este documento se enmarca en el proyecto de innovación educativa AIGORA (Aprendizaje de Informática con Github Organizado en Repositorios Abiertos).
+
+#+ATTR_LATEX: :height 0.5\textheight
+[[file:figs/aigora.png]]
+
+https://innovacioneducativa.upm.es/proyectosIE/informacion?anyo=2018-2019&id=2840
+
 * Conceptos básicos
 ** ¿Qué es el control de versiones? 
 
@@ -228,9 +237,11 @@ file:figs/git_estados.png
 - /Commit early and often/: cada =commit= debe incluir cambios pequeños y coherentes.
 
 - Escribir un mensaje de calidad al ejecutar cambios facilita tanto el trabajo personal como la colaboración en equipo con Git.[fn:9]
-**** Recomendaciones
+
 - El *título* debe ser *conciso* (50 caracteres) y escrito en imperativo (/Do something.../)
+
 - El *cuerpo* debe explicar *el qué y el por qué del cambio*, no el cómo, comparando con el comportamiento anterior al cambio.
+
 - Se pueden incluir referencias a /issues/ (ver a continuación) con #XX siendo XX el número de la /issue/.
 *** Histórico de cambios
 
@@ -326,13 +337,14 @@ El coordinador del proyecto es el encargado de revisar cada petición y, si todo
 
 *** Resolución de conflictos
 
-Si no se pueden combinar los cambios automáticamente se produce un conflicto (por ejemplo, cuando dos usuarios modifican un mismo fichero).
+Si no se pueden combinar los cambios automáticamente se produce un conflicto (ejemplo: dos usuarios modifican un mismo fichero).
 
 [[file:figs/conflict_web.png]]
 
 Un conflicto se debe resolver manualmente.
 [[file:figs/resolve_conflict_web.png]]
 
+Lectura recomendada: [[https://github.blog/2018-08-22-merge-conflicts-in-the-classroom/][Merge Conflicts in the Classroom]]
 *** Consejos
 
 - *No olvides hacer /pull/ antes de iniciar una nueva interacción con el repositorio*.
@@ -416,25 +428,58 @@ Visita la sección Insights de los repositorios del proyecto AIGORA (https://git
 
 Por ejemplo: https://github.com/aigora/twE105-cafranpa
 
+* GitHub Classroom
+
+*** ¿Qué es GitHub Classroom?
+
+- Es un asistente para configurar grupos y asignar tareas en GitHub. Accesible en: https://classroom.github.com/
+
+- Es recomendable [[https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount][solicitar descuento por cuenta académica]] (repositorios públicos y privados ilimitados, colaboradores ilimitados).
+
+
+*** GitHub Classroom necesita una Organización
+
+- Para poder trabajar con GitHub Classroom es necesario crear una Organización en Github (grupo de cuentas que tienen acceso compartido a un grupo de repositorios): https://github.com/organizations/new
+
+- Ejemplo: https://github.com/swcarpentry
+
+- Dentro de una =organization= pueden coexistir diferentes equipos (=Team=), cada uno de ellos con diferentes permisos de acceso y escritura a los repositorios.
+
+- Las cuentas tipo =organization= también pueden solicitar el [[https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount#upgrading-your-organization][descuento por cuenta académica]]. 
+
+- Más información en el [[https://github.blog/2010-06-29-introducing-organizations/][blog de GitHub]].
+
+*** Configuración de aulas y tareas
+
+- Una única cuenta =organization= puede dar cabida a múltiples aulas (=classrooms=): https://classroom.github.com/classrooms/
+- Dentro de cada =classroom= se pueden incluir múltiples tareas (=assignments=).
+- Un =assignment= puede ser individual o grupal (los grupos se pueden definir antes por el profesor, o por los estudiantes en el momento de aceptar la tarea.)
+- Cada =classroom= contiene estudiantes (identificados por su usuario de GitHub y su correo electrónico) y grupos (=teams=).
+- Esta correspondencia se puede facilitar mediante el =classroom roster=.
+
+*** Cómo hemos usado GitHub Classroom en AIGORA
+
+**** Configuración General
+  - Usamos una =organization= común para todos los grupos de matriculación de una misma asignatura.
+  - Definimos un =classroom= para cada grupo de matriculación.
+  - En cada =classroom= subimos la lista de correos UPM de los estudiantes de ese grupo de matriculación mediante el =roster management=.
+  - Dentro de cada =classroom= definimos diferentes equipos de trabajo (=Teams=) para trabajos grupales.
+*** Cómo hemos usado GitHub Classroom en AIGORA
+
+**** Registro de estudiantes
+
+  1. En cada =classroom= creamos una =Group Assignment= denominada "registro estudiantes". Como identificador del "Group" utilizamos el grupo de matriculación. Este identificador queda almacenado en GitHub Classroom para futuros usos, pero *no* crea un =Team= en GitHub.
+  2. Abrimos el enlace del assignment con nuestro usuario (podemos hacer =skip= cuando nos pide que enlacemos a algún miembro del =roster=), y *creamos un nuevo Team*, que se debe llamar igual que el grupo de matriculación. Este paso *sí* crea un nuevo =Team= en la organization de Github (útil para asignar permisos grupales).
+  3. A continuación enviamos el enlace del =assignment= a los alumnos para que enlacen su usuario de GitHub a su correo incluido en el roster.  *Deben elegir el Team que hemos definido nosotros, sin crear uno nuevo*. A partir de este punto forman parte del =Team= con los permisos y repositorios definidos para el mismo.
+*** Cómo hemos usado GitHub Classroom en AIGORA
+
+**** Grupos de Trabajo
+  
+  1. Para el trabajo en equipo creamos igualmente una =Group Assignment=, pero dejamos libertad a la hora de definir los =Teams=.
+  2. El primer estudiante de un grupo de trabajo que acepta este =assignment= define el nombre del =Team=. Los siguientes estudiantes de ese mismo grupo deben seleccionar ese =Team=.
+  3. Se pueden definir repositorios plantilla para incluir contenido inicial en todos los repositorios creados para cada =Team=. Ejemplo: https://github.com/aigora/starter-code
+
 * Publicación de páginas web en GitHub
-
-*** Página web de *usuario u organización*
-
-1. Crea un repositorio nuevo con el nombre =<username>.github.io=[fn:6].
-2. Sube (=commit= + =push=) un fichero =index.html= a la rama =master= con código HTML.
-3. Con un navegador ve a la dirección [[https://<username>.github.io]]
-
-#+begin_src html
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Hello World</title>
-	</head>
-	<body>
-		Hello World!
-	</body>
-</html>
-#+end_src
 
 *** Página web de *proyecto*
 
@@ -467,24 +512,39 @@ Por ejemplo: https://github.com/aigora/twE105-cafranpa
 #+end_center
 
 - Con un navegador ve a la dirección [[https://<username>.github.io/<repository>]]
+*** Ejemplo de web de *proyecto*
+
+- Página web: https://oscarperpinan.github.io/bookvis/
+- Repositorio: https://github.com/oscarperpinan/bookvis/tree/master/docs
+
+[[file:figs/captura_bookvis.png]]
 
 
-* COMMENT GitHub Classroom
-https://github.blog/2018-03-06-how-to-use-group-assignments-in-github-classroom/
+*** Página web de *usuario u organización*
 
-https://classroom.github.com/assistant
+1. Crea un repositorio nuevo con el nombre =<username>.github.io=[fn:6].
+2. Sube (=commit= + =push=) un fichero =index.html= a la rama =master= con código HTML.
+3. Con un navegador ve a la dirección [[https://<username>.github.io]]
 
-https://github.blog/2018-08-22-merge-conflicts-in-the-classroom/
+#+begin_src html
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Hello World</title>
+	</head>
+	<body>
+		Hello World!
+	</body>
+</html>
+#+end_src
 
-** Resumen de lo hecho en AIGORA
-- Se pueden hacer varias aulas (classrooms con una única organization de GitHub)
-- Usamos GitHub Classroom únicamente para configurar los Teams.
-- Subimos un roster a cada aula (lista de correos alumnos.upm.es)
-- En cada classroom abrimos una Group Assignment denominada "registro_estudiantes". Le ponemos un identificador al "Group" igual al grupo de matriculación. Este Group queda almacenado en GitHub classroom para futuros assignment, pero no crea un Team en GitHub.
-- Abrimos el enlace del assignment con nuestro usuario (podemos hacer skip cuando nos pide que enlacemos a algún miembro del roster), y creamos un nuevo Team, que se debe llamar igual que el grupo de matriculación. Este paso crea un nuevo Team en la organization de Github. Lo podemos usar para dar permisos.
-- Ahora le enviamos el enlace del assignment a los alumnos para que enlacen su usuario de GitHub a su correo incluido en el roster. 
-- Deben elegir el Team que hemos definido nosotros, sin crear uno nuevo. A partir de este punto, están incluidos en este Team, y por tanto adquieren los mismos permisos y repositorios que el Team.
-- Para el trabajo en equipo hacemos una group assignment, pero les dejamos libertad a la hora de definir los Teams.
+*** Ejemplo de web de *organización*
+
+- Página web: https://aigora.github.io/
+- Repositorio: https://github.com/aigora/aigora.github.io
+
+
+[[file:figs/captura_aigora.png]]
 
 * Footnotes
 
