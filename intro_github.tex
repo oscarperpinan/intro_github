@@ -1,4 +1,4 @@
-% Created 2019-02-21 ju. 23:14
+% Created 2019-06-14 vie 15:20
 % Intended LaTeX compiler: pdflatex
 \documentclass[xcolor={usenames,svgnames,dvipsnames}]{beamer}
 \usepackage[utf8]{inputenc}
@@ -33,7 +33,7 @@
 \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\tiny, formatcom = {\color{black!70}}}
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{footline}[frame number]
-\usetheme{Goettingen}
+\usetheme{Boadilla}
 \usefonttheme{serif}
 \author{Oscar Perpiñán Lamigueiro}
 \date{}
@@ -43,18 +43,18 @@
  pdftitle={Introducción al control de versiones y trabajo colaborativo con GitHub},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 26.1 (Org mode 9.1.14)}, 
+ pdfcreator={Emacs 26.1 (Org mode 9.2)}, 
  pdflang={Spanish}}
 \begin{document}
 
 \maketitle
 
 \section{Conceptos básicos}
-\label{sec:orgf9a9788}
+\label{sec:orgdcff83d}
 \subsection{¿Qué es el control de versiones?}
-\label{sec:org75a3f24}
+\label{sec:org5203c2f}
 
-\begin{frame}[plain,label={sec:orgce288af}]{}
+\begin{frame}[label={sec:org6351a38},plain]{}
 \begin{center}
 \includegraphics[width=0.9\paperwidth]{figs/phdcomic_finaldoc_1.png}
 \end{center}
@@ -62,7 +62,7 @@
 \url{http://phdcomics.com/comics/archive.php?comicid=1531}
 \end{frame}
 
-\begin{frame}[plain,label={sec:org311f4e6}]{}
+\begin{frame}[label={sec:org73ac3ec},plain]{}
 \begin{center}
 \includegraphics[width=0.9\paperwidth]{figs/phdcomic_finaldoc_2.png}
 \end{center}
@@ -70,7 +70,7 @@
 \url{http://phdcomics.com/comics/archive.php?comicid=1531}
 \end{frame}
 
-\begin{frame}[plain,label={sec:org42a1ff1}]{}
+\begin{frame}[label={sec:org75e6e3c},plain]{}
 \begin{center}
 \includegraphics[width=0.9\paperwidth]{figs/phdcomic_finaldoc_3.png}
 \end{center}
@@ -78,57 +78,66 @@
 \url{http://phdcomics.com/comics/archive.php?comicid=1531}
 \end{frame}
 
-\begin{frame}[label={sec:orgabc4671}]{¿Qué es el control de versiones y por qué debería importarte?}
+\begin{frame}[label={sec:orgfa94d77}]{¿Qué es el control de versiones y por qué debería importarte?}
 \begin{quote}
 El control de versiones es un sistema que \alert{registra los cambios}
 realizados sobre un archivo o conjunto de archivos a lo largo del
 tiempo, de modo que se puedan \alert{recuperar} versiones específicas más
 adelante.\footnote{\url{https://git-scm.com/book/es/v1/Empezando-Acerca-del-control-de-versiones}}
 \end{quote}
-\end{frame}
-
-\begin{frame}[label={sec:orgac40155}]{¿Qué es el control de versiones y por qué debería importarte?}
-\begin{quote}
-El control de versiones es el cuaderno de laboratorio en el
-mundo digital. 
-
-Es lo que los profesionales usan para realizar un
-\alert{seguimiento} de lo que han hecho y para \alert{colaborar} con otras
-personas. 
-
-\alert{No sirve sólo para software}: libros, documentos, pequeños
-conjuntos de datos y cualquier cosa que cambie con el tiempo o que
-deba compartirse puede y debe almacenarse en un sistema de control de
-versiones.\footnote{\url{https://swcarpentry.github.io/git-novice/}}
-\end{quote}
-\end{frame}
-
-\begin{frame}[label={sec:org92452b6}]{Viajar en el tiempo}
+\begin{block}{Viajar en el tiempo}
 \begin{itemize}
 \item Nada que haya sido sometido a un control de versiones se pierde jamás (\emph{salvo que realmente quieras eliminarlo\ldots{}})
 \item \alert{Todas} las versiones antiguas de un fichero se almacenan: un fichero se puede revertir a un estado anterior sin límites.
 \end{itemize}
+\end{block}
 \end{frame}
-\begin{frame}[label={sec:orgc6eebeb}]{¿Qué? ¿Cuándo? ¿Quién?}
+\begin{frame}[label={sec:org6eb7963}]{¿Qué es el control de versiones y por qué debería importarte?}
+\begin{quote}
+El control de versiones es el \alert{cuaderno de laboratorio} en el mundo digital. Es lo que los profesionales usan para realizar un
+\alert{seguimiento} de lo que han hecho y para \alert{colaborar} con otras
+personas.\footnote{\url{https://swcarpentry.github.io/git-novice/}\label{org6c5bd59}}
+\end{quote}
+
+
+\begin{block}{¿Qué? ¿Cuándo? ¿Quién?}
 Un sistema de control de versiones registra:
 \begin{itemize}
 \item El detalle de los cambios realizados.
 \item La fecha y hora en la que fueron realizados.
 \item La persona que los realizó.
 \end{itemize}
+\end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org0eef87d}]{Trabajo Colaborativo}
+\begin{frame}[label={sec:orgbe2363c}]{¿Qué es el control de versiones y por qué debería importarte?}
+\begin{quote}
+El control de versiones es el \alert{cuaderno de laboratorio} en el mundo digital. Es lo que los profesionales usan para realizar un
+\alert{seguimiento} de lo que han hecho y para \alert{colaborar} con otras
+personas.\textsuperscript{\ref{org6c5bd59}}
+\end{quote}
+
+\begin{block}{Trabajo Colaborativo}
 \begin{itemize}
 \item Cuando un equipo de personas trabaja conjuntamente en un proyecto, es posible que se produzcan cambios incompatibles en un mismo fichero.
 \item El sistema de control de versiones \alert{impide} cambios simultáneos en un fichero. A cambio, permite la \alert{resolución de conflictos} y los documenta.
 \end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org0f8c017}]{¿Qué es el control de versiones y por qué debería importarte?}
+\begin{quote}
+\alert{No sirve sólo para software}: libros, documentos, pequeños conjuntos
+de datos y cualquier cosa que cambie con el tiempo o que deba
+compartirse puede y debe almacenarse en un sistema de control de
+versiones.\textsuperscript{\ref{org6c5bd59}}
+\end{quote}
 \end{frame}
 
 \subsection{¿Qué son Git y GitHub?}
-\label{sec:orgc602319}
+\label{sec:orgada061b}
 
-\begin{frame}[fragile,label={sec:org152d32c}]{Git es un Sistema de Control de Versiones}
+\begin{frame}[label={sec:orge529258},fragile]{Git es un Sistema de Control de Versiones}
  Git es una herramienta software (accesible mediante línea de comandos con \texttt{git}) que implementa un Sistema de Control de Versiones.
 
 \begin{center}
@@ -136,14 +145,14 @@ Un sistema de control de versiones registra:
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org8e66a76}]{Git es un Sistema de Control de Versiones}
+\begin{frame}[label={sec:org9193f5e}]{Git es un Sistema de Control de Versiones}
 Cada vez que se ejecuta un cambio en una estructura de ficheros controlada con Git, realiza una \guillemotleft{}foto\guillemotright{} del estado de los archivos en ese momento, y guarda una referencia a esa instantánea. 
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/git_model.png}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgc3c776c}]{Git es un Sistema de Control de Versiones}
+\begin{frame}[label={sec:org691d3aa}]{Git es un Sistema de Control de Versiones}
 Por eficiencia, Git no almacena los archivos sin modificaciones sino un enlace al archivo anterior idéntico que ya está almacenado
 
 \begin{center}
@@ -151,7 +160,7 @@ Por eficiencia, Git no almacena los archivos sin modificaciones sino un enlace a
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgf7bd5e2}]{Los estados de Git}
+\begin{frame}[label={sec:org27fa4b8}]{Los estados de Git}
 \begin{itemize}
 \item El desarrollador incorpora uno o varios ficheros al control de versiones. (\emph{tracked})
 \item Realiza modificaciones en los ficheros (\emph{modified}).
@@ -163,7 +172,7 @@ Por eficiencia, Git no almacena los archivos sin modificaciones sino un enlace a
 \end{center}
 \end{frame}
 
-\begin{frame}[fragile,label={sec:org2e18ac9}]{¿Qué es GitHub?}
+\begin{frame}[label={sec:orgfcbb5e3},fragile]{¿Qué es GitHub?}
  \begin{itemize}
 \item GitHub es la plataforma de alojamiento de código más importante a nivel mundial.
 \item Emplea el sistema de control de versiones \texttt{git}
@@ -178,11 +187,11 @@ Por eficiencia, Git no almacena los archivos sin modificaciones sino un enlace a
 \end{frame}
 
 \section{Uso de \texttt{git} y \texttt{GitHub}}
-\label{sec:orgda4d373}
+\label{sec:org16c21c3}
 
 \subsection{Primeros Pasos}
-\label{sec:org9b0bbdf}
-\begin{frame}[label={sec:org0ded2ac}]{Creación de una cuenta en GitHub}
+\label{sec:orgf291bd6}
+\begin{frame}[label={sec:org5560f40}]{Creación de una cuenta en GitHub}
 \url{https://github.com/join}
 
 \begin{center}
@@ -192,7 +201,7 @@ Por eficiencia, Git no almacena los archivos sin modificaciones sino un enlace a
 Más información en \href{https://help.github.com/articles/signing-up-for-a-new-github-account/}{New GitHub account}
 \end{frame}
 
-\begin{frame}[label={sec:org553277d}]{Instalación de GitHub Desktop}
+\begin{frame}[label={sec:orgdc1970f}]{Instalación de GitHub Desktop}
 \url{https://desktop.github.com/}
 
 \begin{center}
@@ -200,7 +209,7 @@ Más información en \href{https://help.github.com/articles/signing-up-for-a-new
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org6f19e8b}]{Conectamos Git, GitHub y GitHub Desktop}
+\begin{frame}[label={sec:org81b8195}]{Conectamos Git, GitHub y GitHub Desktop}
 \begin{itemize}
 \item Una vez instalado comienza el proceso de autenticación, usando las credenciales del paso anterior\footnote{Más información en \href{https://help.github.com/desktop/guides/getting-started-with-github-desktop/authenticating-to-github/}{Authenticating to GitHub}.}.
 \end{itemize}
@@ -219,15 +228,20 @@ Más información en \href{https://help.github.com/articles/signing-up-for-a-new
 \end{center}
 \end{frame}
 
-\begin{frame}[fragile,label={sec:orgad684ca}]{Remoto y Local}
+\begin{frame}[label={sec:org07d0ae3}]{}
+\begin{block}{Ejercicio}
+Abre una cuenta en GitHub, empleando el correo electrónico de la UPM (será útil más tarde, al usar GitHub Classroom), y configura GitHub Desktop para usar esta cuenta.
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org0b3dc7c},fragile]{Remoto y Local}
  \begin{itemize}
 \item \alert{Github.com} aloja los \alert{repositorios remotos} (nube).
 \item En tu ordenador trabajas con una \alert{copia local} del repositorio. Otros desarrolladores tendrán sus propias copias locales.
 \item La(s) copia(s) local(es) y el repositorio remoto deben estar \alert{sincronizados} mediante diferentes comandos de \texttt{git}.
 \end{itemize}
 \end{frame}
-
-\begin{frame}[label={sec:org95be6e8}]{Nuevo repositorio \emph{remoto} desde github.com}
+\begin{frame}[label={sec:orgcd5414e}]{Nuevo repositorio \emph{remoto} desde github.com}
 \url{https://github.com/new}
 
 \begin{center}
@@ -235,7 +249,7 @@ Más información en \href{https://help.github.com/articles/signing-up-for-a-new
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org5bb96d9}]{Nuevo repositorio \emph{local} desde GitHub Desktop}
+\begin{frame}[label={sec:orgaa8ca38}]{Nuevo repositorio \emph{local} desde GitHub Desktop}
 \begin{center}
 \boxed{File > New\ Repository}
 \end{center}
@@ -245,7 +259,7 @@ Más información en \href{https://help.github.com/articles/signing-up-for-a-new
 \end{center}
 \end{frame}
 
-\begin{frame}[fragile,label={sec:org28ec52b}]{Decisiones al crear un repositorio}
+\begin{frame}[label={sec:org31f89b5},fragile]{Decisiones al crear un repositorio}
  \begin{itemize}
 \item Elige un \alert{\texttt{.gitignore}} adecuado al proyecto: Veáse \url{https://github.com/github/gitignore}.
 \item No olvides inicializar y cumplimentar el \alert{\texttt{README.md}}. Para el formato veáse \href{https://help.github.com/articles/basic-writing-and-formatting-syntax/}{Formatting syntax}.
@@ -253,7 +267,7 @@ Más información en \href{https://help.github.com/articles/signing-up-for-a-new
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org0a5f60c}]{Clonar un repositorio remoto}
+\begin{frame}[label={sec:orgb0ae263}]{Clonar un repositorio remoto}
 Si hemos creado el repositorio desde github.com (\emph{repositorio remoto}), hay que clonarlo para poder trabajar con él (\emph{copia local}).
 
 \begin{center}
@@ -265,7 +279,7 @@ Si hemos creado el repositorio desde github.com (\emph{repositorio remoto}), hay
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org2fdbae6}]{Publicar un repositorio local}
+\begin{frame}[label={sec:orgd666338}]{Publicar un repositorio local}
 Si hemos creado el repositorio desde GitHub Desktop (\emph{repositorio local}), hay que publicarlo en github.com (\emph{repositorio remoto})
 
 \begin{center}
@@ -273,23 +287,47 @@ Si hemos creado el repositorio desde GitHub Desktop (\emph{repositorio local}), 
 \end{center}
 \end{frame}
 
-
+\begin{frame}[label={sec:orgbd188fc},fragile]{}
+ \begin{block}{Ejercicio}
+Crea un nuevo repositorio remoto y haz la clonación del mismo para tener una copia local. No olvides elegir la licencia, generar una \texttt{README} y un \texttt{.gitignore}.
+\end{block}
+\end{frame}
 \subsection{Flujo de Trabajo}
-\label{sec:org61b9326}
+\label{sec:org9669d2b}
+\begin{frame}[label={sec:org8a8d41a}]{}
+\begin{center}
+\includegraphics[width=.9\linewidth]{figs/git_estados.png}
+\end{center}
+\end{frame}
 
-\begin{frame}[fragile,label={sec:org9e7e0d1}]{Cambios en la copia local}
- \begin{enumerate}
-\item Modifica los ficheros de la copia local.
-\item Añade los cambios realizados a la siguiente \guillemotleft{}instantánea\guillemotright{} del repositorio (\texttt{git add}) \begin{center}
+\begin{frame}[label={sec:orgd18ff3f}]{Cambios en la copia local}
+\begin{center}
+\includegraphics[height=0.4\textheight]{figs/git_estados.png}
+\end{center}
+
+En la carpeta que contiene la copia local, haz \alert{modificaciones} en los ficheros (empleando tu editor de código/texto preferido).
+\end{frame}
+
+\begin{frame}[label={sec:orgf91d27c},fragile]{Cambios en la copia local}
+ \begin{center}
+\includegraphics[height=0.4\textheight]{figs/git_estados.png}
+\end{center}
+
+\alert{Añade los cambios} realizados a la siguiente \guillemotleft{}instantánea\guillemotright{} del repositorio (\texttt{git add}) \begin{center}
 \includegraphics[width=.9\linewidth]{figs/git_add.png}
 \end{center}
-\item Confirma los cambios, escribiendo un resumen de lo realizado (\texttt{git commit})
+\end{frame}
+\begin{frame}[label={sec:org851c24f},fragile]{Cambios en la copia local}
+ \begin{center}
+\includegraphics[height=0.4\textheight]{figs/git_estados.png}
+\end{center}
+
+\alert{Confirma} los cambios, escribiendo un resumen de lo realizado (\texttt{git commit})
 \begin{center}
 \includegraphics[height=0.3\textheight]{figs/git_commit.png}
 \end{center}
-\end{enumerate}
 \end{frame}
-\begin{frame}[fragile,label={sec:org51ac2a6}]{Como escribir un buen mensaje de \texttt{commit}}
+\begin{frame}[label={sec:org4b9fbaf},fragile]{Consejos para \texttt{commit}}
  \begin{itemize}
 \item \emph{Commit early and often}: cada \texttt{commit} debe incluir cambios pequeños y coherentes.
 
@@ -303,7 +341,7 @@ Si hemos creado el repositorio desde GitHub Desktop (\emph{repositorio local}), 
 \end{itemize}
 \end{block}
 \end{frame}
-\begin{frame}[fragile,label={sec:org10f4241}]{Histórico de cambios}
+\begin{frame}[label={sec:org2c24e11},fragile]{Histórico de cambios}
  Los cambios confirmados con \texttt{commit} se anotan en la historia (\texttt{git log})
 
 \begin{center}
@@ -316,7 +354,7 @@ Si hemos creado el repositorio desde GitHub Desktop (\emph{repositorio local}), 
 \end{frame}
 
 
-\begin{frame}[fragile,label={sec:orge6a0857}]{Publicar cambios al repositorio remoto}
+\begin{frame}[label={sec:org42b2c95},fragile]{Publicar cambios al repositorio remoto}
  \begin{itemize}
 \item Para sincronizar  los cambios realizados \alert{desde la copia local hasta el repositorio remoto} hay que publicar mediante \texttt{git push}.
 \end{itemize}
@@ -333,7 +371,7 @@ Si hemos creado el repositorio desde GitHub Desktop (\emph{repositorio local}), 
 En el caso de repositorios compartidos, antes de un \texttt{git push} es imprescindible actualizar la copia local incorporando los cambios del repositorio con \texttt{git pull}.
 \end{block}
 \end{frame}
-\begin{frame}[fragile,label={sec:org17ed654}]{Recibir cambios de un repositorio remoto}
+\begin{frame}[label={sec:orgab520d6},fragile]{Recibir cambios de un repositorio remoto}
  Para obtener en la copia local los cambios recientes que existan en el repositorio hay que emplear \texttt{git pull}, que es la combinación de la secuencia:
 \begin{enumerate}
 \item \texttt{git fetch}, para obtener los cambios recientes del repositorio remoto.
@@ -344,7 +382,8 @@ En el caso de repositorios compartidos, antes de un \texttt{git push} es impresc
 \boxed{Repository > Pull}
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:org6f1c6d3}]{Resumen}
+
+\begin{frame}[label={sec:org8d38e74}]{Resumen}
 \begin{enumerate}
 \item Realiza modificaciones en los ficheros de la copia local.
 \item \alert{COMMIT} :: Confirma los cambios con un mensaje informativo.
@@ -353,11 +392,11 @@ En el caso de repositorios compartidos, antes de un \texttt{git push} es impresc
 \end{enumerate}
 \end{frame}
 \section{Trabajo en colaboración}
-\label{sec:org4fc8dc4}
+\label{sec:orgccdeabe}
 \subsection{Ramas}
-\label{sec:org35eea5e}
+\label{sec:org4d0f64c}
 
-\begin{frame}[fragile,label={sec:orge495c86}]{Rama \texttt{master}}
+\begin{frame}[label={sec:orge457ea1},fragile]{Rama \texttt{master}}
  \begin{center}
 \includegraphics[width=.9\linewidth]{figs/branching.png}
 \end{center}
@@ -365,27 +404,32 @@ En el caso de repositorios compartidos, antes de un \texttt{git push} es impresc
 En un repositorio de GitHub existe una rama (\emph{branch}) que se usa por defecto: \alert{master}\footnote{\href{https://guides.github.com/introduction/flow/}{Understanding the GitHub Flow}}.
 \end{frame}
 
-\begin{frame}[label={sec:org4af39c2}]{Ramas para facilitar la colaboración}
+\begin{frame}[label={sec:org1237a28}]{Ramas para facilitar la colaboración}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/branching.png}
 \end{center}
 
-\begin{columns}
-\begin{column}{0.6\columnwidth}
 Cuando hay varias personas trabajando sobre un mismo repositorio, es necesario crear nuevas ramas para evitar conflictos. 
 
 De esta forma, cada persona implementa \alert{cambios} en una \alert{rama determinada} de forma paralela al resto del equipo.
-\end{column}
-
-\begin{column}{0.4\columnwidth}
-\begin{center}
-\includegraphics[width=.9\linewidth]{figs/nueva_rama_desktop.png}
-\end{center}
-\end{column}
-\end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgb152c2e}]{Combinación de código}
+\begin{frame}[label={sec:org8674445},fragile]{Crear una nueva rama}
+ \begin{itemize}
+\item En menú: \boxed{Branch > New\ branch...}
+
+\item O en pantalla principal: \boxed{Current\ branch> Branches > New\ branch}
+\end{itemize}
+
+\begin{center}
+\includegraphics[height=0.5\textheight]{figs/nueva_rama_desktop.png}
+\end{center}
+
+
+La nueva rama puede tener como origen la rama \texttt{master} u otra rama existente.
+\end{frame}
+
+\begin{frame}[label={sec:org5186a59}]{Combinación de código}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/branching.png}
 \end{center}
@@ -407,7 +451,7 @@ Cuando los cambios están listos y confirmados (\emph{commit} + \emph{push} en l
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgdd4aac3}]{Combinación de código}
+\begin{frame}[label={sec:org409a309}]{Combinación de código}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/branching.png}
 \end{center}
@@ -420,7 +464,7 @@ El coordinador del proyecto es el encargado de revisar cada petición y, si todo
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org323838e}]{Resolución de conflictos}
+\begin{frame}[label={sec:org06682bf}]{Resolución de conflictos}
 Si no se pueden combinar los cambios automáticamente se produce un conflicto (por ejemplo, cuando dos usuarios modifican un mismo fichero).
 
 \begin{center}
@@ -433,7 +477,7 @@ Un conflicto se debe resolver manualmente.
 \end{center}
 \end{frame}
 
-\begin{frame}[fragile,label={sec:orga2caa9b}]{Consejos}
+\begin{frame}[label={sec:orgd9291c7},fragile]{Consejos}
  \begin{itemize}
 \item \alert{No olvides hacer \emph{pull} antes de iniciar una nueva interacción con el repositorio}.
 
@@ -446,11 +490,19 @@ Un conflicto se debe resolver manualmente.
 \item Este proceso se debe repetir tantas veces como sea necesario para realizar cambios de forma colaborativa.
 \end{itemize}
 \end{frame}
+\begin{frame}[label={sec:orgf0b63ad},fragile]{}
+ \begin{block}{Ejercicio 1}
+Crea una nueva rama en tu repositorio. En esta rama crea un nuevo fichero de texto y añade contenido en él. Sincroniza con el repositorio. Vuelve a la rama \texttt{master} y comprueba que este fichero nuevo no está presente. Combina ambas ramas.
+\end{block}
 
+\begin{block}{Ejercicio 2}
+Vuelve a la rama nueva y modifica un fichero. Vuelve a la rama \texttt{master} y modifica el mismo fichero. Combina ambas ramas y resuelve los conflictos.
+\end{block}
+\end{frame}
 \subsection{Persiguiendo a los bichos}
-\label{sec:orge2b8a67}
+\label{sec:orgdfdd031}
 
-\begin{frame}[label={sec:org54572c5}]{Issues}
+\begin{frame}[label={sec:org357a2c8}]{Issues}
 Todos los repositorios de GitHub tienen una sección denominada \guillemotleft{}Issues\guillemotright{}\footnote{\url{https://guides.github.com/features/issues/}} a modo de \emph{bug tracker}.
 
 Pueden usarse para seguimiento de fallos, mejoras, tareas, etc.
@@ -460,7 +512,7 @@ Pueden usarse para seguimiento de fallos, mejoras, tareas, etc.
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org6005b67}]{Estructura de una issue}
+\begin{frame}[label={sec:org442d078}]{Estructura de una issue}
 Una issue es un tablero de discusión en el que pueden participar los responsables del repositorio y cualquier usuario de GitHub.
 
 \alert{Debe} contener un título y una descripción.
@@ -472,7 +524,7 @@ Una issue es un tablero de discusión en el que pueden participar los responsabl
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org35d97a9}]{Contenido de una issue}
+\begin{frame}[label={sec:org082b4d1}]{Contenido de una issue}
 \begin{itemize}
 \item En la descripción de una issue se debe suministrar toda la información posible para el responsable del repositorio, \alert{incluyendo un ejemplo mínimo, completo y verificable}\footnote{\url{https://stackoverflow.com/help/mcve}}.
 
@@ -482,11 +534,20 @@ Una issue es un tablero de discusión en el que pueden participar los responsabl
 \end{itemize}
 \end{frame}
 
+\begin{frame}[label={sec:orga38279b},fragile]{}
+ \begin{block}{Ejercicio}
+\begin{itemize}
+\item Abre nuevas \texttt{issues} en tu propio repositorio, o en repositorios ajenos (por ejemplo, \url{https://github.com/oscarperpinan/prueba\_github}).
+
+\item Responde y cierra \texttt{issues} de otros usuarios en tu propio repositorio.
+\end{itemize}
+\end{block}
+\end{frame}
 
 \subsection{Herramientas gráficas para el análisis de un repositorio}
-\label{sec:orgb550a1b}
+\label{sec:org4a68169}
 
-\begin{frame}[label={sec:org9c377d0}]{Insights}
+\begin{frame}[label={sec:org9849f73}]{Insights}
 Toda la actividad realizada en un repositorio puede verse de manera gráfica a través del botón \emph{Insights} en la web del repositorio en GitHub\footnote{Más detalles en \href{https://help.github.com/categories/visualizing-repository-data-with-graphs/}{Ver información del repositorio de forma gráfica}.}. Por ejemplo,
 
 \begin{itemize}
@@ -496,28 +557,36 @@ Toda la actividad realizada en un repositorio puede verse de manera gráfica a t
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgbac9272}]{Contribución de los integrantes del equipo}
+\begin{frame}[label={sec:org88aa87f}]{Contribución de los integrantes del equipo}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/repo_contributors_specific_graph.png}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org2a41b7e}]{Estructura de ramas de un repositorio}
+\begin{frame}[label={sec:orgc8e309e}]{Estructura de ramas de un repositorio}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/repo_network_graph.png}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgcca1504}]{Cambios en un repositorio}
+\begin{frame}[label={sec:orga25e9d6}]{Cambios en un repositorio}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/repo_code_frequency_graph_dotcom.png}
 \end{center}
 \end{frame}
 
-\section{Publicación de páginas web en GitHub}
-\label{sec:org6a07271}
+\begin{frame}[label={sec:org31f45cd}]{}
+\begin{block}{Ejercicio}
+Visita la sección Insights de los repositorios del proyecto AIGORA (\url{https://github.com/aigora}). 
 
-\begin{frame}[fragile,label={sec:org082b8c2}]{Página web de usuario u organización}
+Por ejemplo: \url{https://github.com/aigora/twE105-cafranpa}
+\end{block}
+\end{frame}
+
+\section{Publicación de páginas web en GitHub}
+\label{sec:org639c1ec}
+
+\begin{frame}[label={sec:org05cfce7},fragile]{Página web de \alert{usuario u organización}}
  \begin{enumerate}
 \item Crea un repositorio nuevo con el nombre \texttt{<username>.github.io}\footnote{Siendo \texttt{<username>} tu nombre de usuario en GitHub.}.
 \item Sube (\texttt{commit} + \texttt{push}) un fichero \texttt{index.html} a la rama \texttt{master} con código HTML.
@@ -538,7 +607,7 @@ Toda la actividad realizada en un repositorio puede verse de manera gráfica a t
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile,label={sec:org1ce4ebb}]{Página web de proyecto}
+\begin{frame}[label={sec:orga6eed8e},fragile]{Página web de \alert{proyecto}}
  \begin{block}{Si no sabes HTML}
 \begin{itemize}
 \item En la página del repositorio:
@@ -558,7 +627,7 @@ Toda la actividad realizada en un repositorio puede verse de manera gráfica a t
 \end{block}
 \end{frame}
 
-\begin{frame}[fragile,label={sec:orgb0c6533}]{Página web de proyecto}
+\begin{frame}[label={sec:org51e88be},fragile]{Página web de \alert{proyecto}}
  \begin{block}{Si sabes HTML}
 \begin{itemize}
 \item Crea una carpeta \texttt{docs} en la rama \texttt{master} del repositorio.

@@ -44,37 +44,45 @@ realizados sobre un archivo o conjunto de archivos a lo largo del
 tiempo, de modo que se puedan *recuperar* versiones específicas más
 adelante.[fn:1]
 #+end_quote
-
+**** Viajar en el tiempo
+- Nada que haya sido sometido a un control de versiones se pierde jamás (/salvo que realmente quieras eliminarlo.../)
+- *Todas* las versiones antiguas de un fichero se almacenan: un fichero se puede revertir a un estado anterior sin límites.
 *** ¿Qué es el control de versiones y por qué debería importarte?
 
 #+begin_quote
-El control de versiones es el cuaderno de laboratorio en el
-mundo digital. 
-
-Es lo que los profesionales usan para realizar un
+El control de versiones es el *cuaderno de laboratorio* en el mundo digital. Es lo que los profesionales usan para realizar un
 *seguimiento* de lo que han hecho y para *colaborar* con otras
-personas. 
-
-*No sirve sólo para software*: libros, documentos, pequeños
-conjuntos de datos y cualquier cosa que cambie con el tiempo o que
-deba compartirse puede y debe almacenarse en un sistema de control de
-versiones.[fn:2]
+personas.[fn:2]
 #+end_quote
 
-*** Viajar en el tiempo
-- Nada que haya sido sometido a un control de versiones se pierde jamás (/salvo que realmente quieras eliminarlo.../)
-- *Todas* las versiones antiguas de un fichero se almacenan: un fichero se puede revertir a un estado anterior sin límites.
-*** ¿Qué? ¿Cuándo? ¿Quién?
+
+**** ¿Qué? ¿Cuándo? ¿Quién?
 
 Un sistema de control de versiones registra:
 - El detalle de los cambios realizados.
 - La fecha y hora en la que fueron realizados.
 - La persona que los realizó.
 
-*** Trabajo Colaborativo
+*** ¿Qué es el control de versiones y por qué debería importarte?
 
+#+begin_quote
+El control de versiones es el *cuaderno de laboratorio* en el mundo digital. Es lo que los profesionales usan para realizar un
+*seguimiento* de lo que han hecho y para *colaborar* con otras
+personas.[fn:2]
+#+end_quote
+
+**** Trabajo Colaborativo
 - Cuando un equipo de personas trabaja conjuntamente en un proyecto, es posible que se produzcan cambios incompatibles en un mismo fichero.
 - El sistema de control de versiones *impide* cambios simultáneos en un fichero. A cambio, permite la *resolución de conflictos* y los documenta.
+
+*** ¿Qué es el control de versiones y por qué debería importarte?
+
+#+begin_quote
+*No sirve sólo para software*: libros, documentos, pequeños conjuntos
+de datos y cualquier cosa que cambie con el tiempo o que deba
+compartirse puede y debe almacenarse en un sistema de control de
+versiones.[fn:2]
+#+end_quote
 
 ** ¿Qué son Git y GitHub?  
 
@@ -116,10 +124,6 @@ Por eficiencia, Git no almacena los archivos sin modificaciones sino un enlace a
 * Uso de =git= y =GitHub=
 
 ** Primeros Pasos
-*** COMMENT Guías para principiantes
-
-https://help.github.com/desktop/guides/
-
 *** Creación de una cuenta en GitHub
 
 [[https://github.com/join]]
@@ -147,12 +151,16 @@ https://desktop.github.com/
 \boxed{File > Options > Git}
 #+END_CENTER
 
+*** 
+
+**** Ejercicio 
+Abre una cuenta en GitHub, empleando el correo electrónico de la UPM (será útil más tarde, al usar GitHub Classroom), y configura GitHub Desktop para usar esta cuenta.
+
 *** Remoto y Local
 
 - *Github.com* aloja los *repositorios remotos* (nube).
 - En tu ordenador trabajas con una *copia local* del repositorio. Otros desarrolladores tendrán sus propias copias locales.
 - La(s) copia(s) local(es) y el repositorio remoto deben estar *sincronizados* mediante diferentes comandos de =git=.
-
 *** Nuevo repositorio /remoto/ desde github.com
 https://github.com/new
 
@@ -190,17 +198,32 @@ Si hemos creado el repositorio desde GitHub Desktop (/repositorio local/), hay q
 
 [[file:figs/Desktop_PublishRepository.png]]
 
-
+*** 
+**** Ejercicio 
+Crea un nuevo repositorio remoto y haz la clonación del mismo para tener una copia local. No olvides elegir la licencia, generar una =README= y un =.gitignore=.
 ** Flujo de Trabajo
+*** 
+[[file:figs/git_estados.png]]
 
 *** Cambios en la copia local
+#+ATTR_LATEX: :height 0.4\textheight
+file:figs/git_estados.png
 
-1. Modifica los ficheros de la copia local.
-2. Añade los cambios realizados a la siguiente "instantánea" del repositorio (=git add=) [[file:figs/git_add.png]]
-3. Confirma los cambios, escribiendo un resumen de lo realizado (=git commit=)
+En la carpeta que contiene la copia local, haz *modificaciones* en los ficheros (empleando tu editor de código/texto preferido).
+
+*** Cambios en la copia local
+#+ATTR_LATEX: :height 0.4\textheight
+file:figs/git_estados.png
+
+*Añade los cambios* realizados a la siguiente "instantánea" del repositorio (=git add=) [[file:figs/git_add.png]]
+*** Cambios en la copia local
+#+ATTR_LATEX: :height 0.4\textheight
+file:figs/git_estados.png
+
+*Confirma* los cambios, escribiendo un resumen de lo realizado (=git commit=)
   #+ATTR_LATEX: :height 0.3\textheight
  [[file:figs/git_commit.png]]
-*** Como escribir un buen mensaje de =commit=
+*** Consejos para =commit=
 
 - /Commit early and often/: cada =commit= debe incluir cambios pequeños y coherentes.
 
@@ -240,6 +263,7 @@ Para obtener en la copia local los cambios recientes que existan en el repositor
 #+begin_center
 \boxed{Repository > Pull}
 #+end_center
+
 *** Resumen
 
 1. Realiza modificaciones en los ficheros de la copia local.
@@ -257,19 +281,21 @@ En un repositorio de GitHub existe una rama (/branch/) que se usa por defecto: *
 *** Ramas para facilitar la colaboración
 [[file:figs/branching.png]]
 
-****                                                               :BMCOL:
-:PROPERTIES:
-:BEAMER_col: 0.6
-:END:
 Cuando hay varias personas trabajando sobre un mismo repositorio, es necesario crear nuevas ramas para evitar conflictos. 
 
 De esta forma, cada persona implementa *cambios* en una *rama determinada* de forma paralela al resto del equipo.
 
-****                                                               :BMCOL:
-:PROPERTIES:
-:BEAMER_col: 0.4
-:END:
+*** Crear una nueva rama
+
+- En menú: \boxed{Branch > New\ branch...}
+
+- O en pantalla principal: \boxed{Current\ branch> Branches > New\ branch}
+
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:figs/nueva_rama_desktop.png]]
+
+
+La nueva rama puede tener como origen la rama =master= u otra rama existente.
 
 *** Combinación de código
 
@@ -318,7 +344,13 @@ Un conflicto se debe resolver manualmente.
 - Cuando el trabajo en una rama ha concluido, hay que *combinar cambios con master lo antes posible* para reducir la posibilidad de conflicto. Las ramas accesorias utilizadas se pueden eliminar una vez finalizado el proceso.
 
 - Este proceso se debe repetir tantas veces como sea necesario para realizar cambios de forma colaborativa. 
+*** 
+**** Ejercicio 1
+Crea una nueva rama en tu repositorio. En esta rama crea un nuevo fichero de texto y añade contenido en él. Sincroniza con el repositorio. Vuelve a la rama =master= y comprueba que este fichero nuevo no está presente. Combina ambas ramas.
 
+**** Ejercicio 2
+
+Vuelve a la rama nueva y modifica un fichero. Vuelve a la rama =master= y modifica el mismo fichero. Combina ambas ramas y resuelve los conflictos.
 ** Persiguiendo a los bichos
 
 *** Issues
@@ -347,6 +379,12 @@ Una issue es un tablero de discusión en el que pueden participar los responsabl
 
 - Se pueden incluir referencias al código y a otras issues[fn:10].
 
+*** 
+**** Ejercicio
+
+- Abre nuevas =issues= en tu propio repositorio, o en repositorios ajenos (por ejemplo, https://github.com/oscarperpinan/prueba_github).
+
+- Responde y cierra =issues= de otros usuarios en tu propio repositorio.
 
 ** Herramientas gráficas para el análisis de un repositorio
 
@@ -370,9 +408,17 @@ Toda la actividad realizada en un repositorio puede verse de manera gráfica a t
 
 [[file:figs/repo_code_frequency_graph_dotcom.png]]
 
+*** 
+
+**** Ejercicio
+
+Visita la sección Insights de los repositorios del proyecto AIGORA (https://github.com/aigora). 
+
+Por ejemplo: https://github.com/aigora/twE105-cafranpa
+
 * Publicación de páginas web en GitHub
 
-*** Página web de usuario u organización
+*** Página web de *usuario u organización*
 
 1. Crea un repositorio nuevo con el nombre =<username>.github.io=[fn:6].
 2. Sube (=commit= + =push=) un fichero =index.html= a la rama =master= con código HTML.
@@ -390,7 +436,7 @@ Toda la actividad realizada en un repositorio puede verse de manera gráfica a t
 </html>
 #+end_src
 
-*** Página web de proyecto
+*** Página web de *proyecto*
 
 **** Si no sabes HTML
 
@@ -406,7 +452,7 @@ Toda la actividad realizada en un repositorio puede verse de manera gráfica a t
 
 - Con un navegador ve a la dirección [[https://<username>.github.io/<repository>]]
 
-*** Página web de proyecto
+*** Página web de *proyecto*
 
 **** Si sabes HTML
 
