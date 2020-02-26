@@ -165,34 +165,28 @@ https://desktop.github.com/
 **** Ejercicio 
 Abre una cuenta en GitHub, empleando el correo electrónico de la UPM (será útil más tarde, al usar GitHub Classroom), y configura GitHub Desktop para usar esta cuenta.
 
+** Creación y sincronización de repositorios
+
 *** Remoto y Local
 
-- *Github.com* aloja los *repositorios remotos* (nube).
+- *Github.com* aloja los *repositorios remotos* (/nube/).
 - En tu ordenador trabajas con una *copia local* del repositorio. Otros desarrolladores tendrán sus propias copias locales.
 - La(s) copia(s) local(es) y el repositorio remoto deben estar *sincronizados* mediante diferentes comandos de =git=.
-*** Nuevo repositorio /remoto/ desde github.com
-https://github.com/new
-
-[[file:figs/GitHub_New_Repository.png]]
-
-*** Nuevo repositorio /local/ desde GitHub Desktop
-
-#+BEGIN_CENTER
-\boxed{File > New\ Repository}
-#+END_CENTER
-
-#+ATTR_LATEX: :height 0.7\textheight
-[[file:figs/Desktop_NewRepository.png]]
-
 *** Decisiones al crear un repositorio
 
 - Elige un *=.gitignore=* adecuado al proyecto: Veáse [[https://github.com/github/gitignore]].
 - No olvides inicializar y cumplimentar el *=README.md=*. Para el formato veáse [[https://help.github.com/articles/basic-writing-and-formatting-syntax/][Formatting syntax]].
 - Elige una *licencia* adecuada a tu proyecto y a tus intereses actuales y futuros. Veáse https://choosealicense.com.
 
-*** Clonar un repositorio remoto
+*** Método 1: de remoto a local
 
-Si hemos creado el repositorio desde github.com (/repositorio remoto/), hay que clonarlo para poder trabajar con él (/copia local/).
+Abrimos un nuevo repositorio /remoto/: https://github.com/new
+
+[[file:figs/GitHub_New_Repository.png]]
+
+*** Método 1: de remoto a local
+
+Clonamos el /repositorio remoto/ para poder trabajar con él (/copia local/).
 
 #+BEGIN_CENTER
 \boxed{File > Clone\ Repository}
@@ -201,15 +195,29 @@ Si hemos creado el repositorio desde github.com (/repositorio remoto/), hay que 
 #+ATTR_LATEX: :height 0.65\textheight
 [[file:figs/Desktop_CloneRepository.png]]
 
-*** Publicar un repositorio local
+*** Método 2: de local a remoto
 
-Si hemos creado el repositorio desde GitHub Desktop (/repositorio local/), hay que publicarlo en github.com (/repositorio remoto/)
+Abrimos un nuevo repositorio /local/ desde GitHub Desktop
+
+#+BEGIN_CENTER
+\boxed{File > New\ Repository}
+#+END_CENTER
+
+#+ATTR_LATEX: :height 0.7\textheight
+[[file:figs/Desktop_NewRepository.png]]
+
+*** Método 2: de local a remoto
+
+Publicamos el /repositorio local/ github.com (/repositorio remoto/) para que otros puedan verlo y trabajar con él.
 
 [[file:figs/Desktop_PublishRepository.png]]
 
 *** 
 **** Ejercicio 
-Crea un nuevo repositorio remoto y haz la clonación del mismo para tener una copia local. No olvides elegir la licencia, generar una =README= y un =.gitignore=.
+1. Crea un nuevo repositorio remoto y haz la clonación del mismo para tener una copia local.
+2. Crea un nuevo repositorio local y publícalo en remoto. 
+
+En ambos casos, no olvides elegir la licencia, generar un =README= y un =.gitignore=.
 ** Flujo de Trabajo
 *** 
 [[file:figs/git_estados.png]]
@@ -264,8 +272,7 @@ Los cambios confirmados con =commit= se anotan en la historia (=git log=)
 
 - A partir de este punto, la copia local y el repositorio remoto están sincronizados.
 
-**** Importante
-En el caso de repositorios compartidos, antes de un =git push= es imprescindible actualizar la copia local incorporando los cambios del repositorio con =git pull=.
+
 *** Recibir cambios de un repositorio remoto
 Para obtener en la copia local los cambios recientes que existan en el repositorio hay que emplear =git pull=, que es la combinación de la secuencia:
 1. =git fetch=, para obtener los cambios recientes del repositorio remoto.
@@ -274,7 +281,8 @@ Para obtener en la copia local los cambios recientes que existan en el repositor
 #+begin_center
 \boxed{Repository > Pull}
 #+end_center
-
+**** Importante
+En el caso de *repositorios compartidos*, antes de un =git push= es imprescindible actualizar la copia local incorporando los cambios del repositorio con =git pull=.
 *** Resumen
 
 1. Realiza modificaciones en los ficheros de la copia local.
