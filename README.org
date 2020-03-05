@@ -2,7 +2,7 @@
 
 GitHub es la plataforma de alojamiento de código más importante a nivel mundial. Emplea el sistema de control de versiones =git=, y ofrece una amplia variedad de funcionalidades para el alojamiento y revisión del código, el trabajo colaborativo, y la publicación de páginas web asociadas al repositorio de código.
 
-Esta propuesta formativa permite adquirir la destreza suficiente en el manejo de GitHub para la creación y mantenimiento de repositorios de código, para uso individual y trabajo en equipo, tanto en un contexto docente como en un contexto de investigación y desarrollo. Se empleará la [aplicación de escritorio](https://desktop.github.com/) y la [web de GitHub](https://github.com/).
+Esta propuesta formativa permite adquirir la destreza suficiente en el manejo de GitHub para la creación y mantenimiento de repositorios de código, para uso individual y trabajo en equipo, tanto en un contexto docente como en un contexto de investigación y desarrollo. Se empleará la [[https://desktop.github.com/][aplicación de escritorio]] y la [[https://github.com/][web de GitHub]].
 
 * Objetivos
  
@@ -17,7 +17,7 @@ Esta propuesta formativa permite adquirir la destreza suficiente en el manejo de
 * Metodología
 
 Esta propuesta formativa está construida sobre dos recursos:
-[diapositivas](https://github.com/oscarperpinan/intro_github/raw/master/intro_github.pdf), y [repositorios de ejemplo](https://github.com/oscarperpinan/prueba_github). 
+[[https://github.com/oscarperpinan/intro_github/raw/master/intro_github.pdf][diapositivas]], y [[https://github.com/oscarperpinan/prueba_github][repositorios de ejemplo]]. 
 
 El material está construido de forma que los asistentes podrán
 ejecutar paso a paso lo expuesto en las diapositivas. Según se avance
