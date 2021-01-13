@@ -289,6 +289,35 @@ En el caso de *repositorios compartidos*, antes de un =git push= es imprescindib
 2. *COMMIT* :: Confirma los cambios con un mensaje informativo.
 3. *PULL* :: Incorpora los cambios del repositorio remoto a la copia local.
 4. *PUSH* :: Publica los cambios de la copia local al repositorio remoto.
+** COMMENT Recuperación de cambios
+*** Recordatorio
+#+begin_quote
+El control de versiones es un sistema que *registra los cambios*
+realizados sobre un archivo o conjunto de archivos a lo largo del
+tiempo, de modo que se puedan *recuperar* versiones específicas más
+adelante.[fn:1]
+#+end_quote
+**** Viajar en el tiempo
+- Nada que haya sido sometido a un control de versiones se pierde jamás (/salvo que realmente quieras eliminarlo.../)
+- *Todas* las versiones antiguas de un fichero se almacenan: un fichero se puede revertir a un estado anterior sin límites.
+*** =git checkout= 
+
+- Esta funcionalidad de =git= no está disponible en GitHub Desktop.
+- Con línea de comandos se consigue a través de =git checkout=[fn:14].
+*** =git checkout=
+- Recuperar el fichero =filename= del último =commit= (es decir, descartar cambios realizados recientemente):
+  git checkout HEAD filename
+- Recuperar el fichero =filename= de un =commit= más antiguo:
+  Visitar la historia de cambios:
+  git log --oneline
+  Recuperar el commit a través del hash:
+  git checkout 55df4c2 -- filename
+  O el cambio anterior a este commit:
+  git checkout 55df4c2~1 -- filename
+- Después de =checkout= hay que aplicar cambios y sincronizar
+  git commit -m "Mensaje..."
+  git push
+-  
 * Trabajo en colaboración
 ** Ramas
 
@@ -555,6 +584,8 @@ Por ejemplo: https://github.com/aigora/twE105-cafranpa
 [[file:figs/captura_aigora.png]]
 
 * Footnotes
+
+[fn:14]https://git-scm.com/docs/git-checkout 
 
 [fn:13][[https://guides.github.com/introduction/flow/][Understanding the GitHub Flow]] 
 
