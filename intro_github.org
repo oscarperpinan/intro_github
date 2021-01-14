@@ -165,6 +165,14 @@ https://desktop.github.com/
 **** Ejercicio 
 Abre una cuenta en GitHub, empleando el correo electrónico de la UPM (será útil más tarde, al usar GitHub Classroom), y configura GitHub Desktop para usar esta cuenta.
 
+*** =git= en línea de comandos
+
+- =git= tiene un elevado número de funcionalidades. Sólo algunas están implementadas en GitHub Desktop.
+- Para poder acceder al conjunto completo es necesario instalar =git= y utilizar línea de comandos:
+  - [[https://gitforwindows.org/][Git for Windows]]
+  - [[http://git-scm.com/download/linux][Git for Linux]]
+  - [[http://git-scm.com/download/mac][Git for Mac]]
+
 ** Creación y sincronización de repositorios
 
 *** Remoto y Local
@@ -289,35 +297,41 @@ En el caso de *repositorios compartidos*, antes de un =git push= es imprescindib
 2. *COMMIT* :: Confirma los cambios con un mensaje informativo.
 3. *PULL* :: Incorpora los cambios del repositorio remoto a la copia local.
 4. *PUSH* :: Publica los cambios de la copia local al repositorio remoto.
-** COMMENT Recuperación de cambios
+** Recuperación de cambios
 *** Recordatorio
 #+begin_quote
 El control de versiones es un sistema que *registra los cambios*
 realizados sobre un archivo o conjunto de archivos a lo largo del
 tiempo, de modo que se puedan *recuperar* versiones específicas más
-adelante.[fn:1]
+adelante.
 #+end_quote
 **** Viajar en el tiempo
 - Nada que haya sido sometido a un control de versiones se pierde jamás (/salvo que realmente quieras eliminarlo.../)
 - *Todas* las versiones antiguas de un fichero se almacenan: un fichero se puede revertir a un estado anterior sin límites.
 *** =git checkout= 
-
 - Esta funcionalidad de =git= no está disponible en GitHub Desktop.
 - Con línea de comandos se consigue a través de =git checkout=[fn:14].
-*** =git checkout=
-- Recuperar el fichero =filename= del último =commit= (es decir, descartar cambios realizados recientemente):
+*** Ejemplos
+- Recuperar el fichero =filename= del último =commit= (es decir, descartar cambios que aún no han sido confirmados):
+  #+BEGIN_SRC sh
   git checkout HEAD filename
+  #+END_SRC  
+
 - Recuperar el fichero =filename= de un =commit= más antiguo:
-  Visitar la historia de cambios:
+  #+BEGIN_SRC sh
+  #Visitar la historia de cambios
   git log --oneline
-  Recuperar el commit a través del hash:
+  #Recuperar el commit a través del hash
   git checkout 55df4c2 -- filename
-  O el cambio anterior a este commit:
+  #O el cambio anterior a este commit
   git checkout 55df4c2~1 -- filename
+  #+END_SRC  
+
 - Después de =checkout= hay que aplicar cambios y sincronizar
+  #+BEGIN_SRC sh
   git commit -m "Mensaje..."
   git push
--  
+  #+END_SRC   
 * Trabajo en colaboración
 ** Ramas
 
@@ -469,7 +483,9 @@ Por ejemplo: https://github.com/aigora/twE105-cafranpa
 
 *** ¿Qué es GitHub Classroom?
 
-- Es un asistente para configurar grupos y asignar tareas en GitHub. Accesible en: https://classroom.github.com/
+- Es un asistente para configurar grupos y asignar tareas en GitHub.
+
+- Accesible en: https://classroom.github.com/
 
 - Es recomendable [[https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount][solicitar descuento por cuenta académica]] (repositorios públicos y privados ilimitados, colaboradores ilimitados).
 
@@ -478,21 +494,39 @@ Por ejemplo: https://github.com/aigora/twE105-cafranpa
 
 - Para poder trabajar con GitHub Classroom es necesario crear una Organización en Github (grupo de cuentas que tienen acceso compartido a un grupo de repositorios): https://github.com/organizations/new
 
-- Ejemplo: https://github.com/swcarpentry
+- Ejemplos 
+  
+  https://github.com/swcarpentry
 
-- Dentro de una =organization= pueden coexistir diferentes equipos (=Team=), cada uno de ellos con diferentes permisos de acceso y escritura a los repositorios.
+  https://github.com/aigora
 
 - Las cuentas tipo =organization= también pueden solicitar el [[https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount#upgrading-your-organization][descuento por cuenta académica]]. 
 
+*** Dentro de una organización se pueden definir equipos
+
+- Dentro de una =organization= pueden coexistir diferentes equipos (=Team=)
+
+- Se pueden asignar diferentes permisos de acceso y escritura a cada equipo, o a conjuntos de equipos.
+
+- Ejemplo:
+
+  https://github.com/orgs/aigora/teams
+
 - Más información en el [[https://github.blog/2010-06-29-introducing-organizations/][blog de GitHub]].
 
-*** Configuración de aulas y tareas
+*** Configuración de aulas 
 
-- Una única cuenta =organization= puede dar cabida a múltiples aulas (=classrooms=): https://classroom.github.com/classrooms/
-- Dentro de cada =classroom= se pueden incluir múltiples tareas (=assignments=).
-- Un =assignment= puede ser individual o grupal (los grupos se pueden definir antes por el profesor, o por los estudiantes en el momento de aceptar la tarea.)
+- Una única cuenta =organization= puede dar cabida a múltiples aulas (=classrooms=): 
+  https://classroom.github.com/classrooms/
 - Cada =classroom= contiene estudiantes (identificados por su usuario de GitHub y su correo electrónico) y grupos (=teams=).
-- Esta correspondencia se puede facilitar mediante el =classroom roster=.
+- Esta correspondencia se puede facilitar mediante el =classroom roster=[fn:15].
+
+*** Asignación de tareas
+
+- Dentro de cada =classroom= se pueden incluir múltiples tareas (=assignments=).
+- Un =assignment= puede ser individual o grupal.
+- Los grupos se pueden definir antes por el profesor, o por los estudiantes en el momento de aceptar la tarea.
+
 
 *** Cómo hemos usado GitHub Classroom en AIGORA
 
@@ -520,6 +554,8 @@ Por ejemplo: https://github.com/aigora/twE105-cafranpa
 
 *** Página web de *proyecto*
 
+ [[https://<username>.github.io/<repository>]]
+
 **** Si no sabes HTML
 
 - En la página del repositorio:
@@ -532,28 +568,34 @@ Por ejemplo: https://github.com/aigora/twE105-cafranpa
 
 - Modifica el fichero =README.md=[fn:7] (=commit= + =push=).
 
-- Con un navegador ve a la dirección [[https://<username>.github.io/<repository>]]
-
 *** Página web de *proyecto*
+
+ [[https://<username>.github.io/<repository>]]
 
 **** Si sabes HTML
 
 - Crea una carpeta =docs= en la rama =master= del repositorio.
 
 - En esta carpeta =docs= crea/modifica un fichero =index.html= (=commit= + =push=).
+#+begin_src html
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Hello World</title>
+	</head>
+	<body>
+		Hello World!
+	</body>
+</html>
+#+end_src
 
-- En la página del repositorio:
+- En la página del repositorio: \boxed{Settings > GitHub\ Pages > Source > docs\ folder}
 
-#+begin_center
-\boxed{Settings > GitHub\ Pages > Source > docs\ folder}
-#+end_center
-
-- Con un navegador ve a la dirección [[https://<username>.github.io/<repository>]]
 *** Ejemplo de web de *proyecto*
 
 - Página web: https://oscarperpinan.github.io/bookvis/
 - Repositorio: https://github.com/oscarperpinan/bookvis/tree/master/docs
-
+#+ATTR_LATEX: :height 0.5\textheight
 [[file:figs/captura_bookvis.png]]
 
 
@@ -584,6 +626,8 @@ Por ejemplo: https://github.com/aigora/twE105-cafranpa
 [[file:figs/captura_aigora.png]]
 
 * Footnotes
+
+[fn:15] [[https://docs.github.com/es/free-pro-team@latest/education/manage-coursework-with-github-classroom/manage-classrooms#creating-a-roster-for-your-classroom][Creating a roster for your classroom (GitHub Docs)]]
 
 [fn:14]https://git-scm.com/docs/git-checkout 
 
