@@ -203,6 +203,11 @@ Clonamos el /repositorio remoto/ para poder trabajar con él (/copia local/).
 #+ATTR_LATEX: :height 0.65\textheight
 [[file:figs/Desktop_CloneRepository.png]]
 
+*** 
+**** Ejercicio 
+Crea un nuevo repositorio remoto y haz la clonación del mismo para tener una copia local.
+
+No olvides elegir la licencia, generar un =README= y un =.gitignore=.
 *** Método 2: de local a remoto
 
 Abrimos un nuevo repositorio /local/ desde GitHub Desktop
@@ -222,10 +227,9 @@ Publicamos el /repositorio local/ github.com (/repositorio remoto/) para que otr
 
 *** 
 **** Ejercicio 
-1. Crea un nuevo repositorio remoto y haz la clonación del mismo para tener una copia local.
-2. Crea un nuevo repositorio local y publícalo en remoto. 
+Crea un nuevo repositorio local y publícalo en remoto. 
 
-En ambos casos, no olvides elegir la licencia, generar un =README= y un =.gitignore=.
+No olvides elegir la licencia, generar un =README= y un =.gitignore=.
 ** Flujo de Trabajo
 *** 
 [[file:figs/git_estados.png]]
